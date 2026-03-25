@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOID Power — Charging Stations for Your Location</title>
+  <meta name="description" content="Upgrade your location with a YOID charging station. Offer power to your customers and boost your business.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 (grid + utilities only) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="yoid-nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <svg width="90" height="32" viewBox="0 0 90 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="6" fill="#E8175D"/>
+          <text x="6" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="16" fill="white">Y</text>
+          <text x="42" y="23" font-family="Inter,sans-serif" font-weight="900" font-size="22" fill="white" letter-spacing="-0.5">YOID</text>
+        </svg>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#stations">Stations</a>
+        <a href="#collection">Collection</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn-pink nav-cta">REQUEST A STATION</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          UPGRADE YOUR<br>
+          LOCATION WITH<br>
+          A <span class="text-pink">YOID</span> STATION
+        </h1>
+        <p class="hero-sub">
+          Give your customers the power to stay connected. YOID charging stations increase dwell time, drive loyalty, and create a new revenue stream for your business.
+        </p>
+        <a href="#contact" class="btn-pink hero-cta">REQUEST A STATION</a>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#E8175D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="feature-label">Easy Setup</div>
+              <div class="feature-desc">Ready in minutes, no wiring required</div>
+            </div>
+          </div>
+          <div class="hero-feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66 4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66 4.24-4.24" stroke="#E8175D" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="feature-label">Instant Revenue</div>
+              <div class="feature-desc">Earn from every charge, every day</div>
+            </div>
+          </div>
+          <div class="hero-feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#E8175D" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="#E8175D" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <div class="feature-label">Business Booster</div>
+              <div class="feature-desc">Keep customers longer, increase spend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="images/hero-device.png" alt="YOID Station Device" class="hero-device-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder hero-device-placeholder" style="display:none;">
+          <div class="placeholder-inner">
+            <span>YOID Device</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OUR STATIONS
+  ============================================================ -->
+  <section class="stations" id="stations">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">OUR STATIONS</h2>
+        <p class="section-sub">Choose the right YOID station for your space. All models offer the same seamless charging experience — designed to fit any environment.</p>
+      </div>
+
+      <div class="stations-grid">
+
+        <!-- YOID COMPACT -->
+        <div class="station-card" data-aos="fade-up">
+          <div class="station-img-wrap">
+            <img src="images/station-compact.png" alt="YOID Compact Station" class="station-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="img-placeholder station-placeholder" style="display:none;">
+              <div class="placeholder-inner dark">
+                <span>YOID COMPACT</span>
+              </div>
+            </div>
+          </div>
+          <div class="station-info">
+            <div class="station-badge">COMPACT</div>
+            <h3 class="station-name">YOID COMPACT</h3>
+            <p class="station-desc">Perfect for countertops and tight spaces. Sleek tabletop design with multiple charging slots. Ideal for cafés, reception desks, and retail counters.</p>
+          </div>
+        </div>
+
+        <!-- YOID PLUS -->
+        <div class="station-card station-card--featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="station-img-wrap">
+            <img src="images/station-plus.png" alt="YOID Plus Station" class="station-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="img-placeholder station-placeholder" style="display:none;">
+              <div class="placeholder-inner dark">
+                <div class="station-mock-screen">
+                  <p>POWER IS<br>STAYING<br>CONNECTED</p>
+                </div>
+                <span>YOID PLUS</span>
+              </div>
+            </div>
+          </div>
+          <div class="station-info">
+            <div class="station-badge station-badge--featured">PLUS</div>
+            <h3 class="station-name">YOID PLUS</h3>
+            <p class="station-desc">A full-height kiosk with a large digital display for advertising. Great for hotels, shopping centres, airports, and high-traffic venues.</p>
+          </div>
+        </div>
+
+        <!-- YOID MAX -->
+        <div class="station-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="station-img-wrap">
+            <img src="images/station-max.png" alt="YOID Max Station" class="station-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="img-placeholder station-placeholder" style="display:none;">
+              <div class="placeholder-inner dark">
+                <div class="station-mock-logo">YOID</div>
+                <span>YOID MAX</span>
+              </div>
+            </div>
+          </div>
+          <div class="station-info">
+            <div class="station-badge">MAX</div>
+            <h3 class="station-name">YOID MAX</h3>
+            <p class="station-desc">Our largest and most powerful station. Maximum charging capacity with premium branding opportunities. Built for stadiums, malls, and large event spaces.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OUR COLLECTION
+  ============================================================ -->
+  <section class="collection" id="collection">
+    <div class="section-container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title section-title--light">OUR COLLECTION</h2>
+        <p class="section-sub section-sub--light">Eight powerful messages. One purpose — keeping people connected wherever they are.</p>
+      </div>
+    </div>
+
+    <div class="swiper collection-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-1.png" alt="Power Is Staying Connected" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>STAYING<br>CONNECTED</p>
+              <div class="card-character">🤝</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-2.png" alt="Power Is Pure" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>PURE</p>
+              <div class="card-character">✨</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-3.png" alt="Power Is Moments That Last" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>MOMENTS<br>THAT LAST</p>
+              <div class="card-character">📸</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-4.png" alt="Power Is Sharing Adventures" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>SHARING<br>ADVENTURES</p>
+              <div class="card-character">🌍</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-5.png" alt="Power Is Giving Light" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>GIVING<br>LIGHT</p>
+              <div class="card-character">💡</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-6.png" alt="Power Is Giving Time" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>GIVING<br>TIME</p>
+              <div class="card-character">⏰</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-7.png" alt="Power Is Sharing Anywhere" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>SHARING<br>ANYWHERE</p>
+              <div class="card-character">📡</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="collection-card">
+            <img src="images/collection/card-8.png" alt="Power Is Giving Energy" class="collection-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="collection-card-fallback" style="display:none;">
+              <p class="card-slogan">POWER IS<br>GIVING<br>ENERGY</p>
+              <div class="card-character">⚡</div>
+              <div class="card-logo">YOID</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Swiper nav -->
+      <div class="swiper-button-prev collection-prev"></div>
+      <div class="swiper-button-next collection-next"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT / CTA
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <div class="contact-grid">
+
+        <!-- Left column -->
+        <div class="contact-left">
+          <h2 class="contact-title">READY TO BRING CHARGING TO YOUR LOCATION?</h2>
+          <p class="contact-desc">Join hundreds of businesses already partnering with YOID. Get your station in place quickly and start delivering value to your customers from day one.</p>
+          <ul class="contact-features">
+            <li>
+              <span class="feat-check">✓</span>
+              <span>No upfront hardware costs</span>
+            </li>
+            <li>
+              <span class="feat-check">✓</span>
+              <span>Installation included — ready in hours</span>
+            </li>
+            <li>
+              <span class="feat-check">✓</span>
+              <span>Real-time revenue tracking dashboard</span>
+            </li>
+            <li>
+              <span class="feat-check">✓</span>
+              <span>24/7 technical support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column — Form -->
+        <div class="contact-right">
+          <form id="contact-form" class="yoid-form" novalidate>
+            <div id="form-message" class="form-message" style="display:none;"></div>
+
+            <div class="form-group">
+              <label for="business_name">BUSINESS NAME</label>
+              <input type="text" id="business_name" name="business_name" placeholder="e.g. The Grand Hotel" required>
+            </div>
+
+            <div class="form-group">
+              <label for="location_type">LOCATION TYPE</label>
+              <select id="location_type" name="location_type" required>
+                <option value="" disabled selected>Select your venue type</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Restaurant / Café">Restaurant / Café</option>
+                <option value="Shopping Centre">Shopping Centre</option>
+                <option value="Airport / Transport Hub">Airport / Transport Hub</option>
+                <option value="Stadium / Arena">Stadium / Arena</option>
+                <option value="Gym / Fitness">Gym / Fitness</option>
+                <option value="Hospital / Clinic">Hospital / Clinic</option>
+                <option value="Office Building">Office Building</option>
+                <option value="Retail Store">Retail Store</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="city_region">CITY / REGION</label>
+              <input type="text" id="city_region" name="city_region" placeholder="e.g. Athens, Greece" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact_email">CONTACT EMAIL</label>
+              <input type="email" id="contact_email" name="contact_email" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">MESSAGE</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your location and how many stations you need..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-pink form-submit" id="submit-btn">
+              <span class="btn-text">SEND REQUEST</span>
+              <span class="btn-loader" style="display:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)" stroke-width="3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="yoid-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <svg width="90" height="32" viewBox="0 0 90 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="6" fill="#E8175D"/>
+            <text x="6" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="16" fill="white">Y</text>
+            <text x="42" y="23" font-family="Inter,sans-serif" font-weight="900" font-size="22" fill="white" letter-spacing="-0.5">YOID</text>
+          </svg>
+          <p class="footer-tagline">Power Is Staying Connected.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#stations">Our Stations</a>
+            <a href="#collection">Collection</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#contact">Contact Us</a>
+            <a href="mailto:orders@yoidpower.com">orders@yoidpower.com</a>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/yoidpower" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/company/yoidpower" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 YOID Power. All rights reserved.</p>
+        <p class="footer-domain">order.yoidpower.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- App JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

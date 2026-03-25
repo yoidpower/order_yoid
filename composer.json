@@ -1,0 +1,13 @@
+{
+  "name": "yoidpower/landing",
+  "description": "YOID Power landing page — order.yoidpower.com",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "phpmailer/phpmailer": "^6.9"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
