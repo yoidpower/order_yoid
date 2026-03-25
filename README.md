@@ -178,37 +178,17 @@ git pull origin main
 docker compose up -d --build
 ```
 
-### Nginx Reverse Proxy (add to your Nginx config)
+### Reverse proxy + SSL
 
-```nginx
-server {
-    listen 80;
-    server_name order.yoidpower.com;
-    return 301 https://$host$request_uri;
-}
+**No manual Nginx config needed.** The server uses `jwilder/nginx-proxy` + `jrcs/letsencrypt-nginx-proxy-companion`.
 
-server {
-    listen 443 ssl;
-    server_name order.yoidpower.com;
+The `docker-compose.yml` already includes:
+- `VIRTUAL_HOST=order.yoidpower.com` → nginx-proxy auto-routes traffic
+- `LETSENCRYPT_HOST=order.yoidpower.com` → letsencrypt companion auto-issues SSL cert
+- `expose: "80"` (NOT `ports:`) → only nginx-proxy can reach it
+- `networks: proxy-tier → yoidpower_proxy-tier` (external) → joins the correct proxy network
 
-    ssl_certificate     /etc/letsencrypt/live/order.yoidpower.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/order.yoidpower.com/privkey.pem;
-
-    location / {
-        proxy_pass         http://127.0.0.1:8082;
-        proxy_set_header   Host              $host;
-        proxy_set_header   X-Real-IP         $remote_addr;
-        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
-        proxy_set_header   X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-### SSL with Certbot
-
-```bash
-certbot --nginx -d order.yoidpower.com
-```
+SSL certificate is issued automatically within ~60 seconds of the container starting.
 
 ---
 
