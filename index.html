@@ -21,16 +21,12 @@
           <text x="0" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="24" fill="#222" letter-spacing="-1">YOID</text>
         </svg>
       </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#stations">Stations</a>
-        <a href="#collection">Collection</a>
-        <a href="#contact">Contact</a>
+      <div class="nav__right">
+        <a href="#contact" class="nav__icon" aria-label="Account">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#333" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="#333" stroke-width="2"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--order">ORDER NOW</a>
       </div>
-      <a href="#contact" class="btn btn--order">ORDER NOW</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
@@ -45,7 +41,7 @@
       <div class="hero__card">
         <div class="hero__card-inner">
           <div class="hero__text">
-            <h1 class="hero__title">UPGRADE YOUR LOCATION WITH A <span class="c-pink">YOID</span> STATION</h1>
+            <h1 class="hero__title">UPGRADE YOUR LOCATION WITH A YOID STATION</h1>
             <div class="hero__desc-box">
               <p>Plug-and-play powerbank stations that keep customers charged, engaged, and on-site longer — with zero operational effort.</p>
             </div>
@@ -57,24 +53,29 @@
         <div class="hero__accent-line"></div>
       </div>
 
+      <a href="#contact" class="btn btn--pink hero__cta">REQUEST A STATION</a>
+
       <div class="hero__features" data-aos="fade-up" data-aos-delay="200">
-        <div class="hero__feat">
+        <div class="hero__feat-card">
           <div class="hero__feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#E8175D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <span>Easy Setup</span>
+          <h3>Plug & Play</h3>
+          <p>No setup, no Wi-Fi. Just plug into power and go live instantly.</p>
         </div>
-        <div class="hero__feat">
+        <div class="hero__feat-card">
           <div class="hero__feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8175D" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#E8175D" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#222" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <span>Instant Revenue</span>
+          <h3>Fully Automated</h3>
+          <p>No staff involvement. Customers take, use, and return powerbanks independently.</p>
         </div>
-        <div class="hero__feat">
+        <div class="hero__feat-card">
           <div class="hero__feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#E8175D" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="#E8175D" stroke-width="2"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <span>Business Booster</span>
+          <h3>Revenue & Retention</h3>
+          <p>Increase dwell time and create a new revenue stream effortlessly.</p>
         </div>
       </div>
     </div>
@@ -84,7 +85,7 @@
   <section class="stations" id="stations">
     <div class="stations__inner">
       <h2 class="sect-title" data-aos="fade-up">OUR STATIONS</h2>
-      <p class="sect-sub" data-aos="fade-up" data-aos-delay="100">Choose the right YOID station for your space — each model delivers seamless charging, designed to fit any environment and customer need.</p>
+      <p class="sect-sub" data-aos="fade-up" data-aos-delay="100">A flexible range of charging stations designed for different environments — from compact setups to high-traffic locations.</p>
 
       <div class="stations__showcase">
         <!-- COMPACT row -->
@@ -93,8 +94,10 @@
             <img src="images/station-compact.jpg" alt="YOID Compact">
           </div>
           <div class="stations__compact-info">
-            <span class="stations__badge stations__badge--pink">YOID COMPACT</span>
-            <p>Sleek tabletop design with 6-8 slots. Perfect for cafés, reception desks, and retail counters.</p>
+            <span class="stations__badge stations__badge--pink">8 SLOTS</span>
+            <h3 class="stations__name">YOID COMPACT</h3>
+            <h4 class="stations__subtitle">Best for most locations</h4>
+            <p>Compact, efficient, and high-performing — ideal for cafés, restaurants, offices, and everyday environments. Delivers the highest ROI per square meter.</p>
           </div>
         </div>
 
@@ -120,8 +123,10 @@
 
         <!-- PLUS badge + description -->
         <div class="stations__plus-label" data-aos="fade-up">
-          <span class="stations__badge stations__badge--pink">YOID PLUS</span>
-          <p>Full-height kiosk with a large digital display for advertising. Ideal for hotels, malls, airports, and high-traffic venues.</p>
+          <span class="stations__badge stations__badge--pink">24 SLOTS</span>
+          <h3 class="stations__name">YOID PLUS</h3>
+          <h4 class="stations__subtitle">For growing demand</h4>
+          <p>Higher capacity and extended usage — perfect for busy venues with steady customer flow.</p>
         </div>
 
         <!-- PLUS station (tall kiosk) -->
@@ -140,8 +145,10 @@
 
         <!-- MAX badge + description -->
         <div class="stations__max-label" data-aos="fade-up" data-aos-delay="200">
-          <span class="stations__badge stations__badge--pink">YOID MAX</span>
-          <p>Our largest and most powerful station. Maximum capacity with premium branding. Built for stadiums, malls, and events.</p>
+          <span class="stations__badge stations__badge--pink">48 SLOTS</span>
+          <h3 class="stations__name">YOID MAX</h3>
+          <h4 class="stations__subtitle">Built for scale</h4>
+          <p>Designed for high-traffic environments like airports, malls, and large venues where maximum capacity is essential.</p>
         </div>
 
         <!-- Dashed arrow 2 -->
@@ -156,8 +163,10 @@
   <!-- OUR COLLECTION -->
   <section class="collection" id="collection">
     <div class="collection__header">
-      <h2 class="sect-title" data-aos="fade-up">OUR COLLECTION</h2>
-      <p class="sect-sub" data-aos="fade-up" data-aos-delay="100">Eight powerful messages. One purpose — keeping people connected wherever they go.</p>
+      <div class="collection__header-row">
+        <h2 class="collection__title" data-aos="fade-up">OUR COLLECTION</h2>
+        <p class="collection__sub" data-aos="fade-up" data-aos-delay="100">A collection designed to make charging feel natural, social, and part of everyday moments — not just a utility.</p>
+      </div>
     </div>
 
     <div class="swiper collection__swiper">
@@ -181,12 +190,11 @@
     <div class="contact__inner">
       <div class="contact__left" data-aos="fade-up">
         <h2 class="contact__title">READY TO BRING CHARGING TO YOUR LOCATION?</h2>
-        <p class="contact__desc">Join hundreds of businesses already partnering with YOID. Get your station in place quickly and start delivering value to your customers from day one.</p>
+        <p class="contact__desc">Tell us about your space and we'll match you with the right station.</p>
         <ul class="contact__list">
-          <li><span class="contact__check">&#10003;</span> No upfront hardware costs</li>
-          <li><span class="contact__check">&#10003;</span> Installation included — ready in hours</li>
-          <li><span class="contact__check">&#10003;</span> Real-time revenue tracking dashboard</li>
-          <li><span class="contact__check">&#10003;</span> 24/7 technical support</li>
+          <li><span class="contact__icon">▲</span> No installation costs</li>
+          <li><span class="contact__icon">▲</span> Full insurance coverage</li>
+          <li><span class="contact__icon">▲</span> 24/7 technical support</li>
         </ul>
       </div>
       <div class="contact__right" data-aos="fade-up" data-aos-delay="100">
@@ -194,26 +202,26 @@
           <div id="form-message" class="form__msg" style="display:none;"></div>
           <div class="form__group">
             <label for="business_name">BUSINESS NAME</label>
-            <input type="text" id="business_name" name="business_name" required>
+            <input type="text" id="business_name" name="business_name" placeholder="e.g. Yoid Power Coffee" required>
           </div>
           <div class="form__group">
             <label for="location_type">LOCATION TYPE</label>
-            <input type="text" id="location_type" name="location_type" required>
+            <input type="text" id="location_type" name="location_type" placeholder="e.g. Cafe/Restaurant" required>
           </div>
           <div class="form__group">
             <label for="city_region">CITY/REGION</label>
-            <input type="text" id="city_region" name="city_region" required>
+            <input type="text" id="city_region" name="city_region" placeholder="e.g. Amsterdam, Netherlands" required>
           </div>
           <div class="form__group">
             <label for="contact_email">CONTACT EMAIL</label>
-            <input type="email" id="contact_email" name="contact_email" required>
+            <input type="email" id="contact_email" name="contact_email" placeholder="e.g. email@yoidpower.com" required>
           </div>
           <div class="form__group">
             <label for="message">MESSAGE</label>
-            <textarea id="message" name="message" rows="4"></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your location ..."></textarea>
           </div>
           <button type="submit" class="btn btn--pink btn--full" id="submit-btn">
-            <span class="btn__text">SUBMIT</span>
+            <span class="btn__text">REQUEST A STATION</span>
             <span class="btn__loader" style="display:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,.3)" stroke-width="3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>
           </button>
         </form>
