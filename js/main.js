@@ -44,14 +44,14 @@
 
   // ── Swiper: Collection carousel ───────────────────────────────
   if (typeof Swiper !== 'undefined') {
-    new Swiper('.collection-swiper', {
+    new Swiper('.collection__swiper', {
       slidesPerView:  'auto',
       spaceBetween:   20,
       grabCursor:     true,
       freeMode:       true,
       navigation: {
-        nextEl: '.collection-next',
-        prevEl: '.collection-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       keyboard:       { enabled: true },
       mousewheel:     { forceToAxis: true },
@@ -167,8 +167,8 @@
 
   function setLoading(on) {
     if (!submitBtn) return;
-    const text   = submitBtn.querySelector('.btn-text');
-    const loader = submitBtn.querySelector('.btn-loader');
+    const text   = submitBtn.querySelector('.btn__text');
+    const loader = submitBtn.querySelector('.btn__loader');
     submitBtn.disabled = on;
     if (text)   text.style.display   = on ? 'none' : '';
     if (loader) loader.style.display = on ? 'inline-flex' : 'none';
@@ -176,7 +176,7 @@
 
   function showMessage(type, text) {
     if (!msgBox) return;
-    msgBox.className = 'form-message ' + type;
+    msgBox.className = 'form__msg ' + type;
     msgBox.textContent = text;
     msgBox.style.display = 'block';
   }
@@ -184,7 +184,7 @@
   function hideMessage() {
     if (!msgBox) return;
     msgBox.style.display = 'none';
-    msgBox.className = 'form-message';
+    msgBox.className = 'form__msg';
   }
 
   // ── Smooth active nav link highlighting ─────────────────────
