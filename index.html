@@ -13,121 +13,151 @@
 </head>
 <body>
 
-  <!-- ═══ NAVBAR ═══ -->
+  <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
         <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="24" fill="white" letter-spacing="-1">YOID</text>
+          <text x="0" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="24" fill="#222" letter-spacing="-1">YOID</text>
         </svg>
       </a>
-      <a href="#contact" class="btn btn--pink btn--sm">REQUEST A STATION</a>
-      <button class="nav__burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#stations">Stations</a>
+        <a href="#collection">Collection</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn--order">ORDER NOW</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- ═══ HERO ═══ -->
+  <!-- HERO -->
   <section class="hero" id="home">
-    <!-- Diagonal gradient band -->
-    <div class="hero__band"></div>
+    <!-- Diagonal gradient stripes -->
+    <div class="hero__stripe hero__stripe--purple"></div>
+    <div class="hero__stripe hero__stripe--pink"></div>
+    <div class="hero__stripe hero__stripe--teal"></div>
 
-    <div class="hero__inner">
-      <div class="hero__text">
-        <h1 class="hero__title">UPGRADE YOUR<br>LOCATION WITH<br>A <span class="c-pink">YOID</span> STATION</h1>
-        <p class="hero__sub">Give your customers the power to stay connected. YOID charging stations increase dwell time, drive loyalty, and create a new revenue stream for your business.</p>
-        <a href="#contact" class="btn btn--pink">REQUEST A STATION</a>
-        <div class="hero__features">
-          <div class="hero__feat">
-            <div class="hero__feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#E8175D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="hero__container">
+      <div class="hero__card">
+        <div class="hero__card-inner">
+          <div class="hero__text">
+            <h1 class="hero__title">UPGRADE YOUR LOCATION WITH A <span class="c-pink">YOID</span> STATION</h1>
+            <div class="hero__desc-box">
+              <p>Plug-and-play powerbank stations that keep customers charged, engaged, and on-site longer — with zero operational effort.</p>
             </div>
-            <span>Easy Setup</span>
           </div>
-          <div class="hero__feat">
-            <div class="hero__feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8175D" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#E8175D" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <span>Instant Revenue</span>
-          </div>
-          <div class="hero__feat">
-            <div class="hero__feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#E8175D" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="#E8175D" stroke-width="2"/></svg>
-            </div>
-            <span>Business Booster</span>
+          <div class="hero__img">
+            <img src="images/station-compact.jpg" alt="YOID Compact Station" class="hero__device">
           </div>
         </div>
+        <div class="hero__accent-line"></div>
       </div>
-      <div class="hero__img">
-        <img src="images/station-compact.jpg" alt="YOID Compact Station" class="hero__device">
+
+      <div class="hero__features" data-aos="fade-up" data-aos-delay="200">
+        <div class="hero__feat">
+          <div class="hero__feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#E8175D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Easy Setup</span>
+        </div>
+        <div class="hero__feat">
+          <div class="hero__feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8175D" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#E8175D" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span>Instant Revenue</span>
+        </div>
+        <div class="hero__feat">
+          <div class="hero__feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#E8175D" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="#E8175D" stroke-width="2"/></svg>
+          </div>
+          <span>Business Booster</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ OUR STATIONS ═══ -->
+  <!-- OUR STATIONS -->
   <section class="stations" id="stations">
     <div class="stations__inner">
-      <h2 class="sect-title">OUR STATIONS</h2>
-      <p class="sect-sub">Choose the right YOID station for your space — each model delivers seamless charging, designed to fit any environment and customer need.</p>
+      <h2 class="sect-title" data-aos="fade-up">OUR STATIONS</h2>
+      <p class="sect-sub" data-aos="fade-up" data-aos-delay="100">Choose the right YOID station for your space — each model delivers seamless charging, designed to fit any environment and customer need.</p>
 
       <div class="stations__showcase">
-        <!-- COMPACT -->
-        <div class="stations__compact">
+        <!-- COMPACT row -->
+        <div class="stations__compact" data-aos="fade-up">
           <div class="stations__compact-img">
             <img src="images/station-compact.jpg" alt="YOID Compact">
           </div>
           <div class="stations__compact-info">
-            <span class="stations__badge">YOID COMPACT</span>
+            <span class="stations__badge stations__badge--pink">YOID COMPACT</span>
             <p>Sleek tabletop design with 6-8 slots. Perfect for cafés, reception desks, and retail counters.</p>
           </div>
         </div>
 
-        <!-- Connector arrow 1 -->
-        <svg class="stations__arrow stations__arrow--1" viewBox="0 0 120 80" fill="none">
-          <path d="M10 10 C40 10, 80 50, 110 70" stroke="#222" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
-          <polygon points="108,64 115,72 106,72" fill="#222"/>
+        <!-- Display screen card -->
+        <div class="stations__display" data-aos="fade-up" data-aos-delay="100">
+          <div class="stations__display-card">
+            <div class="stations__display-screen">
+              <p class="stations__display-heading">POWER IS STAYING CONNECTED</p>
+              <div class="stations__display-logo">
+                <svg width="60" height="22" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="24" fill="white" letter-spacing="-1">YOID</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashed arrow -->
+        <svg class="stations__arrow stations__arrow--1" viewBox="0 0 200 100" fill="none">
+          <path d="M20 20 C60 20, 140 60, 180 80" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+          <polygon points="176,74 184,82 174,82" fill="#333"/>
         </svg>
 
-        <!-- PLUS -->
-        <div class="stations__plus">
+        <!-- PLUS badge + description -->
+        <div class="stations__plus-label" data-aos="fade-up">
+          <span class="stations__badge stations__badge--pink">YOID PLUS</span>
+          <p>Full-height kiosk with a large digital display for advertising. Ideal for hotels, malls, airports, and high-traffic venues.</p>
+        </div>
+
+        <!-- PLUS station (tall kiosk) -->
+        <div class="stations__plus" data-aos="fade-up" data-aos-delay="100">
           <div class="stations__plus-img">
             <img src="images/station-plus.jpg" alt="YOID Plus">
           </div>
-          <div class="stations__plus-info">
-            <span class="stations__badge stations__badge--pink">YOID PLUS</span>
-            <p>Full-height kiosk with a large digital display for advertising. Ideal for hotels, malls, airports, and high-traffic venues.</p>
-          </div>
         </div>
 
-        <!-- POWER IS STAYING CONNECTED display -->
-        <div class="stations__display">
-          <img src="images/station-max.jpg" alt="YOID Station Display">
-        </div>
-
-        <!-- Connector arrow 2 -->
-        <svg class="stations__arrow stations__arrow--2" viewBox="0 0 120 80" fill="none">
-          <path d="M10 70 C40 70, 80 30, 110 10" stroke="#222" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
-          <polygon points="108,4 115,8 108,16" fill="#222"/>
-        </svg>
-
-        <!-- MAX -->
-        <div class="stations__max">
+        <!-- MAX station (tall, dark) -->
+        <div class="stations__max" data-aos="fade-up" data-aos-delay="200">
           <div class="stations__max-img">
-            <img src="images/station-plus.jpg" alt="YOID Max">
-          </div>
-          <div class="stations__max-info">
-            <span class="stations__badge">YOID MAX</span>
-            <p>Our largest and most powerful station. Maximum capacity with premium branding. Built for stadiums, malls, and events.</p>
+            <img src="images/station-max.jpg" alt="YOID Max">
           </div>
         </div>
+
+        <!-- MAX badge + description -->
+        <div class="stations__max-label" data-aos="fade-up" data-aos-delay="200">
+          <span class="stations__badge stations__badge--pink">YOID MAX</span>
+          <p>Our largest and most powerful station. Maximum capacity with premium branding. Built for stadiums, malls, and events.</p>
+        </div>
+
+        <!-- Dashed arrow 2 -->
+        <svg class="stations__arrow stations__arrow--2" viewBox="0 0 200 100" fill="none">
+          <path d="M20 80 C60 80, 140 40, 180 20" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+          <polygon points="176,14 184,18 178,26" fill="#333"/>
+        </svg>
       </div>
     </div>
   </section>
 
-  <!-- ═══ OUR COLLECTION ═══ -->
+  <!-- OUR COLLECTION -->
   <section class="collection" id="collection">
     <div class="collection__header">
-      <h2 class="sect-title sect-title--light">OUR COLLECTION</h2>
-      <p class="sect-sub sect-sub--light">Eight powerful messages. One purpose — keeping people connected wherever they go.</p>
+      <h2 class="sect-title" data-aos="fade-up">OUR COLLECTION</h2>
+      <p class="sect-sub" data-aos="fade-up" data-aos-delay="100">Eight powerful messages. One purpose — keeping people connected wherever they go.</p>
     </div>
 
     <div class="swiper collection__swiper">
@@ -146,21 +176,21 @@
     </div>
   </section>
 
-  <!-- ═══ CONTACT ═══ -->
+  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact__inner">
-      <div class="contact__left">
+      <div class="contact__left" data-aos="fade-up">
         <h2 class="contact__title">READY TO BRING CHARGING TO YOUR LOCATION?</h2>
         <p class="contact__desc">Join hundreds of businesses already partnering with YOID. Get your station in place quickly and start delivering value to your customers from day one.</p>
         <ul class="contact__list">
-          <li><span class="contact__check">✓</span> No upfront hardware costs</li>
-          <li><span class="contact__check">✓</span> Installation included — ready in hours</li>
-          <li><span class="contact__check">✓</span> Real-time revenue tracking dashboard</li>
-          <li><span class="contact__check">✓</span> 24/7 technical support</li>
+          <li><span class="contact__check">&#10003;</span> No upfront hardware costs</li>
+          <li><span class="contact__check">&#10003;</span> Installation included — ready in hours</li>
+          <li><span class="contact__check">&#10003;</span> Real-time revenue tracking dashboard</li>
+          <li><span class="contact__check">&#10003;</span> 24/7 technical support</li>
         </ul>
       </div>
-      <div class="contact__right">
-        <form id="contact-form" class="form" novalidate>
+      <div class="contact__right" data-aos="fade-up" data-aos-delay="100">
+        <form id="contact-form" class="form" action="/send.php" method="POST" novalidate>
           <div id="form-message" class="form__msg" style="display:none;"></div>
           <div class="form__group">
             <label for="business_name">BUSINESS NAME</label>
@@ -189,9 +219,17 @@
         </form>
       </div>
     </div>
+
+    <!-- Newsletter pill -->
+    <div class="contact__newsletter" data-aos="fade-up">
+      <a href="mailto:orders@yoidpower.com" class="contact__newsletter-btn">
+        <span class="contact__newsletter-accent"></span>
+        <span>GET OUR NEWS</span>
+      </a>
+    </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__top">
@@ -200,6 +238,17 @@
             <text x="0" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="24" fill="white" letter-spacing="-1">YOID</text>
           </svg>
           <p>Power Is Staying Connected.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter/X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-7-8.5L19.5 4H18l-5 6.2L9 4H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 11v5M8 8v.01M12 16v-4c0-1.1.9-2 2-2s2 .9 2 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+          </div>
         </div>
         <div class="footer__links">
           <div class="footer__col">
@@ -208,8 +257,9 @@
             <a href="#collection">Collection</a>
           </div>
           <div class="footer__col">
-            <h4>Contact</h4>
-            <a href="#contact">Request a Station</a>
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
             <a href="mailto:orders@yoidpower.com">orders@yoidpower.com</a>
           </div>
         </div>
