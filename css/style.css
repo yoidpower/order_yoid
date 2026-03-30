@@ -98,6 +98,7 @@ ul{list-style:none}
   display:flex;align-items:center;justify-content:space-between;
 }
 .nav__logo{display:flex;align-items:center}
+.nav__logo-img{height:28px;width:auto}
 
 .nav__right{display:flex;align-items:center;gap:16px}
 .nav__icon{
@@ -482,6 +483,7 @@ ul{list-style:none}
   padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);
 }
 .footer__brand{display:flex;flex-direction:column;gap:12px}
+.footer__logo-img{height:28px;width:auto;filter:brightness(0) invert(1)}
 .footer__brand p{font-size:13px;color:rgba(255,255,255,.4);font-style:italic}
 
 .footer__socials{display:flex;gap:16px;margin-top:8px}
