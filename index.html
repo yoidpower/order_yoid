@@ -89,7 +89,7 @@
 
       <div class="stations__showcase">
         <!-- COMPACT row -->
-        <div class="stations__compact" data-aos="fade-up">
+        <div class="stations__compact-row">
           <div class="stations__compact-img">
             <img src="images/station-compact.jpg" alt="YOID Compact">
           </div>
@@ -101,61 +101,44 @@
           </div>
         </div>
 
-        <!-- Display screen card -->
-        <div class="stations__display" data-aos="fade-up" data-aos-delay="100">
-          <div class="stations__display-card">
-            <div class="stations__display-screen">
-              <p class="stations__display-heading">POWER IS STAYING CONNECTED</p>
-              <div class="stations__display-logo">
-                <svg width="60" height="22" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg">
-                  <text x="0" y="22" font-family="Inter,sans-serif" font-weight="900" font-size="24" fill="white" letter-spacing="-1">YOID</text>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dashed arrow -->
+        <!-- Dashed arrow 1 -->
         <svg class="stations__arrow stations__arrow--1" viewBox="0 0 200 100" fill="none">
           <path d="M20 20 C60 20, 140 60, 180 80" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
           <polygon points="176,74 184,82 174,82" fill="#333"/>
         </svg>
 
-        <!-- PLUS badge + description -->
-        <div class="stations__plus-label" data-aos="fade-up">
-          <span class="stations__badge stations__badge--pink">24 SLOTS</span>
-          <h3 class="stations__name">YOID PLUS</h3>
-          <h4 class="stations__subtitle">For growing demand</h4>
-          <p>Higher capacity and extended usage — perfect for busy venues with steady customer flow.</p>
-        </div>
+        <!-- FLOOR STATIONS: PLUS + MAX side by side -->
+        <div class="stations__floor">
+          <div class="stations__plus-info">
+            <span class="stations__badge stations__badge--pink">24 SLOTS</span>
+            <h3 class="stations__name">YOID PLUS</h3>
+            <h4 class="stations__subtitle">For growing demand</h4>
+            <p>Higher capacity and extended usage — perfect for busy venues with steady customer flow.</p>
+          </div>
 
-        <!-- PLUS station (tall kiosk) -->
-        <div class="stations__plus" data-aos="fade-up" data-aos-delay="100">
-          <div class="stations__plus-img">
-            <img src="images/station-plus.jpg" alt="YOID Plus">
+          <div class="stations__floor-images">
+            <div class="stations__floor-img stations__floor-img--plus">
+              <img src="images/station-plus.jpg" alt="YOID Plus">
+            </div>
+
+            <!-- Dashed arrow 2 -->
+            <svg class="stations__arrow stations__arrow--2" viewBox="0 0 80 200" fill="none">
+              <path d="M10 20 C30 80, 50 120, 70 180" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+              <polygon points="66,176 74,184 64,180" fill="#333"/>
+            </svg>
+
+            <div class="stations__floor-img stations__floor-img--max">
+              <img src="images/station-max.jpg" alt="YOID Max">
+            </div>
+          </div>
+
+          <div class="stations__max-info">
+            <span class="stations__badge stations__badge--pink">48 SLOTS</span>
+            <h3 class="stations__name">YOID MAX</h3>
+            <h4 class="stations__subtitle">Built for scale</h4>
+            <p>Designed for high-traffic environments like airports, malls, and large venues where maximum capacity is essential.</p>
           </div>
         </div>
-
-        <!-- MAX station (tall, dark) -->
-        <div class="stations__max" data-aos="fade-up" data-aos-delay="200">
-          <div class="stations__max-img">
-            <img src="images/station-max.jpg" alt="YOID Max">
-          </div>
-        </div>
-
-        <!-- MAX badge + description -->
-        <div class="stations__max-label" data-aos="fade-up" data-aos-delay="200">
-          <span class="stations__badge stations__badge--pink">48 SLOTS</span>
-          <h3 class="stations__name">YOID MAX</h3>
-          <h4 class="stations__subtitle">Built for scale</h4>
-          <p>Designed for high-traffic environments like airports, malls, and large venues where maximum capacity is essential.</p>
-        </div>
-
-        <!-- Dashed arrow 2 -->
-        <svg class="stations__arrow stations__arrow--2" viewBox="0 0 200 100" fill="none">
-          <path d="M20 80 C60 80, 140 40, 180 20" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
-          <polygon points="176,14 184,18 178,26" fill="#333"/>
-        </svg>
       </div>
     </div>
   </section>
