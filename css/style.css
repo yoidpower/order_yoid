@@ -245,20 +245,7 @@ ul{list-style:none}
   margin-top:20px;
 }
 
-/* COMPACT row — image left, text right */
-.stations__compact-row{
-  display:flex;gap:28px;align-items:flex-start;
-  max-width:620px;
-}
-.stations__compact-img{
-  width:220px;flex-shrink:0;border-radius:var(--radius-sm);
-  overflow:hidden;border:3px solid var(--pink);
-  background:#fafafa;box-shadow:0 8px 32px rgba(232,23,93,.12);
-  transform:rotate(-2deg);
-}
-.stations__compact-img img{width:100%;display:block}
-.stations__compact-info{padding-top:12px}
-
+/* Shared badge & text styles */
 .stations__badge{
   display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;
   text-transform:uppercase;color:#222;background:#f0f0f0;
@@ -276,7 +263,40 @@ ul{list-style:none}
 .stations__plus-info p,
 .stations__max-info p{font-size:13px;color:#666;line-height:1.7;max-width:360px}
 
-/* Arrow 1 — from compact to floor stations */
+/* ROW 1: COMPACT — image | text | display card */
+.stations__compact-row{
+  display:grid;
+  grid-template-columns:200px 1fr 320px;
+  gap:28px;
+  align-items:center;
+}
+.stations__compact-img{
+  width:200px;flex-shrink:0;border-radius:var(--radius-sm);
+  overflow:hidden;border:3px solid var(--pink);
+  background:#fafafa;box-shadow:0 8px 32px rgba(232,23,93,.12);
+  transform:rotate(-2deg);
+}
+.stations__compact-img img{width:100%;display:block}
+.stations__compact-info{padding-top:12px}
+
+.stations__display-card{
+  background:var(--dark);
+  border-radius:var(--radius-lg);
+  padding:48px 36px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;min-height:240px;
+}
+.stations__display-card h3{
+  font-size:22px;font-weight:800;color:#fff;
+  text-transform:uppercase;letter-spacing:.02em;line-height:1.3;
+  margin-bottom:16px;
+}
+.stations__display-logo{
+  font-size:16px;font-weight:900;color:rgba(255,255,255,.5);
+  letter-spacing:.05em;
+}
+
+/* Arrow */
 .stations__arrow{
   position:relative;z-index:2;opacity:.3;
 }
@@ -284,62 +304,54 @@ ul{list-style:none}
   width:120px;height:70px;
   margin:16px auto 16px 30%;
 }
-
-/* Floor stations: PLUS info | PLUS img | MAX img | MAX info */
-.stations__floor{
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  gap:24px;
-  margin-top:8px;
-}
-
-.stations__plus-info{
-  flex:0 0 160px;
-  align-self:flex-start;
-  padding-top:40px;
-}
-
-.stations__floor-images{
-  display:flex;
-  gap:20px;
-  align-items:flex-end;
-  position:relative;
-  flex-shrink:0;
-}
-.stations__floor-img{
-  overflow:hidden;
-  background:transparent;
-  flex-shrink:0;
-  border-radius:var(--radius-sm);
-}
-.stations__floor-img--plus{
-  width:260px;
-  height:560px;
-}
-.stations__floor-img--max{
-  width:220px;
-  height:600px;
-}
-.stations__floor-img img{
-  width:100%;height:100%;object-fit:cover;display:block;
-}
-
-/* Arrow 2 — between plus and max images */
 .stations__arrow--2{
-  position:absolute;
-  width:60px;height:160px;
-  left:50%;top:50%;
-  transform:translate(-50%,-50%);
-  opacity:.3;
-  z-index:2;
+  width:120px;height:70px;
+  margin:16px auto 16px 40%;
 }
 
+/* ROW 2: PLUS — info left, display + kiosk overlapping right */
+.stations__plus-row{
+  display:flex;
+  align-items:flex-start;
+  gap:32px;
+}
+.stations__plus-info{flex:0 0 180px;padding-top:20px}
+.stations__plus-visual{
+  display:flex;align-items:flex-end;position:relative;flex:1;
+}
+.stations__plus-display{
+  width:300px;flex-shrink:0;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.15);
+}
+.stations__plus-display img{width:100%;display:block}
+.stations__plus-kiosk{
+  width:240px;flex-shrink:0;
+  height:520px;
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,.1);
+  margin-left:-20px;
+}
+.stations__plus-kiosk img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ROW 3: MAX — kiosk left, info right */
+.stations__max-row{
+  display:flex;
+  align-items:flex-end;
+  gap:32px;
+}
+.stations__max-kiosk{
+  width:320px;flex-shrink:0;
+  height:660px;
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.15);
+}
+.stations__max-kiosk img{width:100%;height:100%;object-fit:cover;display:block}
 .stations__max-info{
-  flex:0 0 160px;
-  align-self:flex-end;
   padding-bottom:40px;
-  text-align:center;
 }
 
 /* ================================================================
@@ -522,12 +534,15 @@ ul{list-style:none}
   .hero__features{grid-template-columns:1fr;gap:16px}
 
   .stations__inner{padding:0 20px}
-  .stations__floor{flex-direction:column;align-items:center}
-  .stations__plus-info{flex:none;width:100%}
-  .stations__floor-images{flex-direction:row;justify-content:center}
-  .stations__floor-img--plus{width:200px;height:440px}
-  .stations__floor-img--max{width:180px;height:480px}
-  .stations__max-info{flex:none;width:100%;padding-bottom:0;text-align:left}
+  .stations__compact-row{grid-template-columns:180px 1fr;gap:20px}
+  .stations__display-card{display:none}
+  .stations__plus-row{flex-direction:column}
+  .stations__plus-info{flex:none}
+  .stations__plus-visual{flex:none;width:100%}
+  .stations__plus-display{width:240px}
+  .stations__plus-kiosk{width:180px;height:400px}
+  .stations__max-row{flex-direction:column;align-items:flex-start}
+  .stations__max-kiosk{width:240px;height:480px}
   .stations__arrow{display:none}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
@@ -551,10 +566,11 @@ ul{list-style:none}
   .stations{padding:72px 0}
   .collection{padding:72px 0}
   .contact{padding:72px 0 40px}
-  .stations__compact-row{flex-direction:column}
-  .stations__compact-img{width:100%;transform:none}
-  .stations__floor-img--plus{width:160px;height:360px}
-  .stations__floor-img--max{width:140px;height:380px}
+  .stations__compact-row{grid-template-columns:1fr}
+  .stations__compact-img{width:180px;transform:none}
+  .stations__plus-display{width:200px}
+  .stations__plus-kiosk{width:140px;height:340px}
+  .stations__max-kiosk{width:200px;height:400px}
   .collection__swiper .swiper-slide{width:160px!important}
   .collection__card{width:160px}
   .contact__newsletter-btn{padding:16px 40px;font-size:12px}
