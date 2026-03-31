@@ -309,49 +309,52 @@ ul{list-style:none}
   margin:16px auto 16px 40%;
 }
 
-/* ROW 2: PLUS — info left, display + kiosk overlapping right */
+/* ROW 2: PLUS — info left, phone display + kiosk overlapping right */
 .stations__plus-row{
-  display:flex;
-  align-items:flex-start;
+  display:grid;
+  grid-template-columns:180px 1fr;
   gap:32px;
+  align-items:start;
 }
-.stations__plus-info{flex:0 0 180px;padding-top:20px}
+.stations__plus-info{padding-top:20px}
 .stations__plus-visual{
-  display:flex;align-items:flex-end;position:relative;flex:1;
+  display:flex;align-items:flex-end;position:relative;
+  justify-content:center;
 }
 .stations__plus-display{
-  width:300px;flex-shrink:0;
-  border-radius:var(--radius-lg);
+  width:340px;flex-shrink:0;
+  border-radius:24px;
   overflow:hidden;
-  box-shadow:0 12px 40px rgba(0,0,0,.15);
+  box-shadow:0 16px 50px rgba(0,0,0,.2);
+  background:#000;
+  z-index:1;
 }
 .stations__plus-display img{width:100%;display:block}
 .stations__plus-kiosk{
-  width:240px;flex-shrink:0;
-  height:520px;
-  border-radius:var(--radius-sm);
+  width:200px;flex-shrink:0;
+  height:560px;
   overflow:hidden;
-  box-shadow:0 8px 30px rgba(0,0,0,.1);
-  margin-left:-20px;
+  margin-left:-40px;
+  z-index:2;
 }
-.stations__plus-kiosk img{width:100%;height:100%;object-fit:cover;display:block}
+.stations__plus-kiosk img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-/* ROW 3: MAX — kiosk left, info right */
+/* ROW 3: MAX — tall kiosk left, info bottom-right */
 .stations__max-row{
-  display:flex;
-  align-items:flex-end;
+  display:grid;
+  grid-template-columns:1fr auto;
   gap:32px;
+  align-items:end;
 }
 .stations__max-kiosk{
-  width:320px;flex-shrink:0;
-  height:660px;
-  border-radius:var(--radius-sm);
+  width:100%;max-width:480px;
+  height:720px;
   overflow:hidden;
-  box-shadow:0 12px 40px rgba(0,0,0,.15);
+  margin:0 auto;
 }
-.stations__max-kiosk img{width:100%;height:100%;object-fit:cover;display:block}
+.stations__max-kiosk img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .stations__max-info{
-  padding-bottom:40px;
+  padding-bottom:60px;
 }
 
 /* ================================================================
@@ -534,15 +537,13 @@ ul{list-style:none}
   .hero__features{grid-template-columns:1fr;gap:16px}
 
   .stations__inner{padding:0 20px}
-  .stations__compact-row{grid-template-columns:180px 1fr;gap:20px}
+  .stations__compact-row{grid-template-columns:160px 1fr;gap:20px}
   .stations__display-card{display:none}
-  .stations__plus-row{flex-direction:column}
-  .stations__plus-info{flex:none}
-  .stations__plus-visual{flex:none;width:100%}
-  .stations__plus-display{width:240px}
-  .stations__plus-kiosk{width:180px;height:400px}
-  .stations__max-row{flex-direction:column;align-items:flex-start}
-  .stations__max-kiosk{width:240px;height:480px}
+  .stations__plus-row{grid-template-columns:1fr;gap:20px}
+  .stations__plus-display{width:260px}
+  .stations__plus-kiosk{width:160px;height:380px;margin-left:-30px}
+  .stations__max-row{grid-template-columns:1fr;gap:20px}
+  .stations__max-kiosk{max-width:300px;height:500px}
   .stations__arrow{display:none}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
