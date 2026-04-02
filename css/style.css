@@ -316,26 +316,20 @@ ul{list-style:none}
 }
 .stations__plus-kiosk img{width:100%;height:auto;display:block}
 
-/* ROW 3: MAX — display + kiosk left, info bottom-right */
+/* ROW 3: MAX — single kiosk left, info right */
 .stations__max-row{
   display:grid;
   grid-template-columns:1fr 280px;
   gap:48px;
-  align-items:end;
+  align-items:center;
 }
-.stations__max-visuals{
-  display:flex;align-items:flex-end;gap:32px;
-}
-.stations__max-display{
-  flex:1;max-width:400px;
-}
-.stations__max-display img{width:100%;height:auto;display:block}
 .stations__max-kiosk{
-  flex:1;max-width:340px;
+  max-width:380px;
+  justify-self:center;
 }
 .stations__max-kiosk img{width:100%;height:auto;display:block}
 .stations__max-info{
-  padding-bottom:60px;
+  padding-bottom:20px;
 }
 
 /* ================================================================
@@ -523,9 +517,7 @@ ul{list-style:none}
   .stations__plus-row{grid-template-columns:1fr;gap:20px}
   .stations__plus-kiosk{width:200px}
   .stations__max-row{grid-template-columns:1fr;gap:20px}
-  .stations__max-visuals{gap:16px}
-  .stations__max-display{width:220px}
-  .stations__max-kiosk{width:160px}
+  .stations__max-kiosk{width:240px}
   .stations__arrow{display:none}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
@@ -552,9 +544,7 @@ ul{list-style:none}
   .stations__compact-row{grid-template-columns:1fr}
   .stations__compact-img{width:180px;transform:none}
   .stations__plus-kiosk{width:160px}
-  .stations__max-visuals{flex-direction:column;gap:12px}
-  .stations__max-display{width:200px}
-  .stations__max-kiosk{width:140px}
+  .stations__max-kiosk{width:180px}
   .collection__swiper .swiper-slide{width:160px!important}
   .collection__card{width:160px}
   .contact__newsletter-btn{padding:16px 40px;font-size:12px}
