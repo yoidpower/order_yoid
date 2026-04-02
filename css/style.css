@@ -271,12 +271,9 @@ ul{list-style:none}
   align-items:center;
 }
 .stations__compact-img{
-  width:460px;flex-shrink:0;border-radius:var(--radius-sm);
-  overflow:hidden;border:3px solid var(--pink);
-  background:#fafafa;box-shadow:0 8px 32px rgba(232,23,93,.12);
-  transform:rotate(-2deg);
+  width:460px;flex-shrink:0;
 }
-.stations__compact-img img{width:100%;display:block}
+.stations__compact-img img{width:100%;display:block;border-radius:var(--radius-sm)}
 .stations__compact-info{padding-top:12px}
 
 /* Arrow */
@@ -551,7 +548,7 @@ ul{list-style:none}
   .collection{padding:72px 0}
   .contact{padding:72px 0 40px}
   .stations__compact-row{grid-template-columns:1fr}
-  .stations__compact-img{width:240px;transform:none}
+  .stations__compact-img{width:240px}
   .stations__plus-row{grid-template-columns:1fr}
   .stations__plus-kiosk{width:200px;height:420px}
   .stations__max-row{grid-template-columns:1fr}
