@@ -263,31 +263,21 @@ ul{list-style:none}
 .stations__plus-info p,
 .stations__max-info p{font-size:13px;color:#666;line-height:1.7;max-width:360px}
 
-/* ROW 1: COMPACT — image | text | display card */
+/* ROW 1: COMPACT — image | text */
 .stations__compact-row{
   display:grid;
-  grid-template-columns:200px 1fr 240px;
-  gap:28px;
+  grid-template-columns:220px 1fr;
+  gap:48px;
   align-items:center;
 }
 .stations__compact-img{
-  width:200px;flex-shrink:0;border-radius:var(--radius-sm);
+  width:220px;flex-shrink:0;border-radius:var(--radius-sm);
   overflow:hidden;border:3px solid var(--pink);
   background:#fafafa;box-shadow:0 8px 32px rgba(232,23,93,.12);
   transform:rotate(-2deg);
 }
 .stations__compact-img img{width:100%;display:block}
 .stations__compact-info{padding-top:12px}
-
-.stations__display-card{
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  width:240px;flex-shrink:0;
-  height:320px;
-}
-.stations__display-card img{
-  width:100%;height:100%;object-fit:cover;object-position:top;display:block;
-}
 
 /* Arrow */
 .stations__arrow{
@@ -464,36 +454,37 @@ ul{list-style:none}
    FOOTER — dark
    ================================================================ */
 .footer{
-  background:var(--dark);
-  padding:60px 0 0;color:#fff;
+  background:var(--white);
+  padding:60px 0 0;
+  border-top:1px solid var(--border);
 }
 .footer__inner{max-width:var(--max-w);margin:0 auto;padding:0 40px}
-.footer__top{
-  display:grid;grid-template-columns:1fr 2fr;gap:60px;
-  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);
+.footer__cols{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  padding-bottom:40px;border-bottom:1px solid var(--border);
 }
-.footer__brand{display:flex;flex-direction:column;gap:12px}
-.footer__logo-img{height:28px;width:auto;filter:brightness(0) invert(1)}
-.footer__brand p{font-size:13px;color:rgba(255,255,255,.4);font-style:italic}
+.footer__col-title{
+  font-size:13px;font-weight:800;text-transform:uppercase;
+  letter-spacing:.1em;color:#111;margin-bottom:16px;
+}
+.footer__contact-list{display:flex;flex-direction:column;gap:8px;list-style:none}
+.footer__contact-list li{font-size:13px;color:#555;line-height:1.6}
+.footer__contact-list a{color:#555;transition:color var(--tr)}
+.footer__contact-list a:hover{color:var(--pink)}
+.footer__col-right p{font-size:13px;color:#555;line-height:1.8}
+.footer__bottom{padding:20px 0;font-size:12px;color:#aaa}
 
-.footer__socials{display:flex;gap:16px;margin-top:8px}
-.footer__socials a{
-  color:rgba(255,255,255,.45);transition:color var(--tr);
+/* Newsletter socials */
+.contact__socials{
+  display:flex;gap:16px;margin-top:20px;justify-content:center;
+}
+.contact__socials a{
+  color:#555;transition:color var(--tr);
   display:flex;align-items:center;justify-content:center;
   width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
 }
-.footer__socials a:hover{color:#fff;background:var(--pink)}
-
-.footer__links{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
-.footer__col{display:flex;flex-direction:column;gap:10px}
-.footer__col h4{
-  font-size:11px;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--pink);margin-bottom:4px;
-}
-.footer__col a{font-size:13px;color:rgba(255,255,255,.5);transition:color var(--tr)}
-.footer__col a:hover{color:#fff}
-.footer__bottom{padding:20px 0;font-size:12px;color:rgba(255,255,255,.25)}
+.contact__socials a:hover{color:var(--pink);border-color:var(--pink)}
 
 /* ================================================================
    RESPONSIVE
@@ -513,7 +504,6 @@ ul{list-style:none}
 
   .stations__inner{padding:0 20px}
   .stations__compact-row{grid-template-columns:160px 1fr;gap:20px}
-  .stations__display-card{display:none}
   .stations__plus-row{grid-template-columns:1fr;gap:20px}
   .stations__plus-kiosk{width:200px}
   .stations__max-row{grid-template-columns:1fr;gap:20px}
@@ -527,7 +517,7 @@ ul{list-style:none}
   .collection__swiper{padding:0 20px 40px!important}
   .collection__swiper .swiper-slide{width:180px!important}
   .collection__card{width:180px}
-  .footer__top{grid-template-columns:1fr;gap:32px}
+  .footer__cols{grid-template-columns:1fr;gap:32px}
 }
 
 @media(max-width:576px){
