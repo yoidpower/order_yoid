@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="200" viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Smooth sweep: bottom-left → upper-right -->
+  <path d="M 28 192 C 28 72, 195 22, 392 16" stroke="#111111" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <!-- Open arrowhead at upper-right -->
+  <path d="M 392 16 L 342 10" stroke="#111111" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <path d="M 392 16 L 358 55" stroke="#111111" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+</svg>
