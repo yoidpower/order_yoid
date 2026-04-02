@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=15">
 </head>
 <body>
 
@@ -99,10 +99,11 @@
           </div>
         </div>
 
-        <!-- Dashed arrow 1 -->
-        <svg class="stations__arrow stations__arrow--1" viewBox="0 0 200 100" fill="none">
-          <path d="M20 20 C60 20, 140 60, 180 80" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
-          <polygon points="176,74 184,82 174,82" fill="#333"/>
+        <!-- Hand-drawn arrow 1: curves from right (badge) → left (image) -->
+        <svg class="stations__arrow stations__arrow--1" viewBox="0 0 360 130" fill="none">
+          <path d="M340 100 C260 30, 130 25, 35 80" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M35 80 L62 58" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M35 80 L68 92" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
 
         <!-- ROW 2: PLUS -->
@@ -118,10 +119,11 @@
           </div>
         </div>
 
-        <!-- Dashed arrow 2 -->
-        <svg class="stations__arrow stations__arrow--2" viewBox="0 0 200 100" fill="none">
-          <path d="M20 20 C60 20, 140 60, 180 80" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
-          <polygon points="176,74 184,82 174,82" fill="#333"/>
+        <!-- Hand-drawn arrow 2: curves from left (badge) → right (kiosk) -->
+        <svg class="stations__arrow stations__arrow--2" viewBox="0 0 360 130" fill="none">
+          <path d="M20 100 C100 30, 230 25, 325 80" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M325 80 L298 58" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M325 80 L292 92" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
 
         <!-- ROW 3: MAX -->

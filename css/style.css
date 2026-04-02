@@ -278,15 +278,15 @@ ul{list-style:none}
 
 /* Arrow */
 .stations__arrow{
-  position:relative;z-index:2;opacity:.3;
+  position:relative;z-index:2;display:block;
 }
 .stations__arrow--1{
-  width:120px;height:70px;
-  margin:16px auto 16px 30%;
+  width:260px;height:94px;
+  margin:-8px auto -8px 28%;
 }
 .stations__arrow--2{
-  width:120px;height:70px;
-  margin:16px auto 16px 40%;
+  width:260px;height:94px;
+  margin:-8px auto -8px 36%;
 }
 
 /* ROW 2: PLUS — info left, kiosk right */
