@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
 </head>
 <body>
 
@@ -92,24 +92,29 @@
             <img src="images/station-compact.jpg" alt="YOID Compact">
           </div>
           <div class="stations__compact-info">
-            <span class="stations__badge stations__badge--pink">8 SLOTS</span>
+            <!-- Arrow inside info column, pointing left toward image -->
+            <svg class="stations__row-arrow stations__row-arrow--left" viewBox="0 0 200 70" fill="none">
+              <path d="M185 55 C140 20, 70 12, 18 38" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M18 38 L40 22" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M18 38 L42 46" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="stations__badge stations__badge--gradient">8 SLOTS</span>
             <h3 class="stations__name">YOID COMPACT</h3>
             <h4 class="stations__subtitle">Best for most locations</h4>
             <p>Compact, efficient, and high-performing — ideal for cafés, restaurants, offices, and everyday environments. Delivers the highest ROI per square meter.</p>
           </div>
         </div>
 
-        <!-- Hand-drawn arrow 1: curves from right (badge) → left (image) -->
-        <svg class="stations__arrow stations__arrow--1" viewBox="0 0 360 130" fill="none">
-          <path d="M340 100 C260 30, 130 25, 35 80" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <path d="M35 80 L62 58" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M35 80 L68 92" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-
         <!-- ROW 2: PLUS -->
         <div class="stations__plus-row">
           <div class="stations__plus-info">
-            <span class="stations__badge stations__badge--pink">24 SLOTS</span>
+            <!-- Arrow inside info column, pointing right toward kiosk -->
+            <svg class="stations__row-arrow stations__row-arrow--right" viewBox="0 0 200 70" fill="none">
+              <path d="M15 55 C60 20, 130 12, 182 38" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M182 38 L160 22" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M182 38 L158 46" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="stations__badge stations__badge--gradient">24 SLOTS</span>
             <h3 class="stations__name">YOID PLUS</h3>
             <h4 class="stations__subtitle">For growing demand</h4>
             <p>Higher capacity and extended usage — perfect for busy venues with steady customer flow.</p>
@@ -119,20 +124,19 @@
           </div>
         </div>
 
-        <!-- Hand-drawn arrow 2: curves from left (badge) → right (kiosk) -->
-        <svg class="stations__arrow stations__arrow--2" viewBox="0 0 360 130" fill="none">
-          <path d="M20 100 C100 30, 230 25, 325 80" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <path d="M325 80 L298 58" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M325 80 L292 92" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-
         <!-- ROW 3: MAX -->
         <div class="stations__max-row">
           <div class="stations__max-kiosk">
             <img src="images/station-max.jpg" alt="YOID Max Station">
           </div>
           <div class="stations__max-info">
-            <span class="stations__badge stations__badge--pink">48 SLOTS</span>
+            <!-- Arrow inside info column, pointing left toward kiosk -->
+            <svg class="stations__row-arrow stations__row-arrow--left" viewBox="0 0 200 70" fill="none">
+              <path d="M185 55 C140 20, 70 12, 18 38" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M18 38 L40 22" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M18 38 L42 46" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="stations__badge stations__badge--gradient">48 SLOTS</span>
             <h3 class="stations__name">YOID MAX</h3>
             <h4 class="stations__subtitle">Built for scale</h4>
             <p>Designed for high-traffic environments like airports, malls, and large venues where maximum capacity is essential.</p>

@@ -252,6 +252,10 @@ ul{list-style:none}
   padding:6px 16px;border-radius:6px;margin-bottom:12px;
 }
 .stations__badge--pink{background:var(--pink);color:#fff}
+.stations__badge--gradient{
+  background:linear-gradient(90deg,#7B2FBE 0%,#E8175D 100%);
+  color:#fff;
+}
 .stations__name{
   font-size:20px;font-weight:800;text-transform:uppercase;
   letter-spacing:.02em;color:#111;margin-bottom:4px;
@@ -263,43 +267,41 @@ ul{list-style:none}
 .stations__plus-info p,
 .stations__max-info p{font-size:13px;color:#666;line-height:1.7;max-width:360px}
 
+/* Row arrow (inside info column) */
+.stations__row-arrow{
+  display:block;
+  width:160px;height:56px;
+  margin-bottom:18px;
+}
+.stations__row-arrow--right{
+  /* flip horizontally so arc goes left→right */
+  transform:scaleX(-1);
+}
+
 /* ROW 1: COMPACT — image | text */
 .stations__compact-row{
   display:grid;
-  grid-template-columns:460px 1fr;
+  grid-template-columns:360px 1fr;
   gap:80px;
   align-items:center;
 }
 .stations__compact-img{
-  width:460px;flex-shrink:0;
+  width:360px;flex-shrink:0;
 }
 .stations__compact-img img{width:100%;display:block;border-radius:var(--radius-sm)}
-.stations__compact-info{padding-top:12px}
-
-/* Arrow */
-.stations__arrow{
-  position:relative;z-index:2;display:block;
-}
-.stations__arrow--1{
-  width:260px;height:94px;
-  margin:-8px auto -8px 28%;
-}
-.stations__arrow--2{
-  width:260px;height:94px;
-  margin:-8px auto -8px 36%;
-}
+.stations__compact-info{padding-top:0}
 
 /* ROW 2: PLUS — info left, kiosk right */
 .stations__plus-row{
   display:grid;
-  grid-template-columns:1fr 320px;
+  grid-template-columns:1fr 300px;
   gap:80px;
   align-items:center;
 }
-.stations__plus-info{padding-top:20px}
+.stations__plus-info{padding-top:0}
 .stations__plus-kiosk{
-  width:320px;
-  height:660px;
+  width:300px;
+  height:620px;
   overflow:hidden;
   border-radius:var(--radius-sm);
   flex-shrink:0;
@@ -315,13 +317,13 @@ ul{list-style:none}
 /* ROW 3: MAX — single kiosk left, info right */
 .stations__max-row{
   display:grid;
-  grid-template-columns:320px 1fr;
+  grid-template-columns:300px 1fr;
   gap:80px;
   align-items:center;
 }
 .stations__max-kiosk{
-  width:320px;
-  height:660px;
+  width:300px;
+  height:620px;
   overflow:hidden;
   border-radius:var(--radius-sm);
   flex-shrink:0;
@@ -334,7 +336,7 @@ ul{list-style:none}
   display:block;
 }
 .stations__max-info{
-  padding-bottom:20px;
+  padding-top:0;padding-bottom:0;
 }
 
 /* ================================================================
@@ -518,13 +520,13 @@ ul{list-style:none}
   .hero__features{grid-template-columns:1fr;gap:16px}
 
   .stations__inner{padding:0 20px}
-  .stations__compact-row{grid-template-columns:280px 1fr;gap:32px}
-  .stations__compact-img{width:280px}
-  .stations__plus-row{grid-template-columns:1fr 240px;gap:32px}
-  .stations__plus-kiosk{width:240px;height:500px}
-  .stations__max-row{grid-template-columns:240px 1fr;gap:32px}
-  .stations__max-kiosk{width:240px;height:500px}
-  .stations__arrow{display:none}
+  .stations__compact-row{grid-template-columns:240px 1fr;gap:32px}
+  .stations__compact-img{width:240px}
+  .stations__plus-row{grid-template-columns:1fr 220px;gap:32px}
+  .stations__plus-kiosk{width:220px;height:460px}
+  .stations__max-row{grid-template-columns:220px 1fr;gap:32px}
+  .stations__max-kiosk{width:220px;height:460px}
+  .stations__row-arrow{width:120px;height:44px}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
   .collection__header{padding:0 20px}
@@ -548,11 +550,12 @@ ul{list-style:none}
   .collection{padding:72px 0}
   .contact{padding:72px 0 40px}
   .stations__compact-row{grid-template-columns:1fr}
-  .stations__compact-img{width:240px}
+  .stations__compact-img{width:220px}
   .stations__plus-row{grid-template-columns:1fr}
-  .stations__plus-kiosk{width:200px;height:420px}
+  .stations__plus-kiosk{width:190px;height:400px}
   .stations__max-row{grid-template-columns:1fr}
-  .stations__max-kiosk{width:200px;height:420px}
+  .stations__max-kiosk{width:190px;height:400px}
+  .stations__row-arrow{width:100px;height:36px}
   .collection__swiper .swiper-slide{width:160px!important}
   .collection__card{width:160px}
   .contact__newsletter-btn{padding:16px 40px;font-size:12px}
