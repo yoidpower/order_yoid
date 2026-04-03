@@ -248,56 +248,61 @@ ul{list-style:none}
 .stations__plus-info   .stations__row-arrow{width:240px}
 .stations__max-info    .stations__row-arrow{width:180px}
 
-/* ROW 1: COMPACT — image left, text right */
+/* ROW 1: COMPACT — image left, text right
+   Physical: 350×260×178mm (tabletop, wider than tall) */
 .stations__compact-row{
   display:flex;
   align-items:center;
   gap:60px;
 }
 .stations__compact-img{
-  flex-shrink:0;
-  width:420px;
-  overflow:hidden;
+  flex:0 0 50%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
 }
-.stations__compact-img img{width:100%;height:auto;display:block}
-.stations__compact-info{flex:1}
+.stations__compact-img img{width:380px;height:auto;display:block}
+.stations__compact-info{flex:1;max-width:480px}
 
-/* ROW 2: PLUS — text left, kiosk right
-   PLUS image: 1262×5518 (ratio 0.229)
-   img height:720px → natural width = 720 × (1262/5518) = 165px */
+/* ROW 2: PLUS — info left half, kiosk right half
+   Physical: 445×1700mm tower (ratio 0.262)
+   PNG: 1262×5518 (ratio 0.229) → at 800px tall = 183px wide
+   Kiosk centered in its half column */
 .stations__plus-row{
   display:flex;
   align-items:flex-end;
-  justify-content:space-between;
 }
 .stations__plus-info{
-  flex:0 0 500px;
-  padding-bottom:48px;
+  flex:0 0 50%;
+  padding-bottom:64px;
+  padding-right:60px;
 }
 .stations__plus-kiosk{
-  flex-shrink:0;
+  flex:0 0 50%;
   display:flex;
   align-items:flex-end;
+  justify-content:center;
 }
-.stations__plus-kiosk img{height:720px;width:auto;display:block}
+.stations__plus-kiosk img{height:800px;width:auto;display:block}
 
-/* ROW 3: MAX — kiosk left, text right
-   MAX image: 1364×3952 (ratio 0.345)
-   img height:720px → natural width = 720 × (1364/3952) = 249px */
+/* ROW 3: MAX — kiosk left half, info right half
+   Physical: 600×1895mm tower (ratio 0.317) — slightly taller & wider than PLUS
+   PNG: 1364×3952 (ratio 0.345) → at 880px tall = 304px wide */
 .stations__max-row{
   display:flex;
   align-items:flex-end;
-  justify-content:space-between;
 }
 .stations__max-kiosk{
-  flex-shrink:0;
+  flex:0 0 50%;
   display:flex;
   align-items:flex-end;
+  justify-content:center;
 }
-.stations__max-kiosk img{height:720px;width:auto;display:block}
+.stations__max-kiosk img{height:880px;width:auto;display:block}
 .stations__max-info{
-  flex:0 0 500px;
-  padding-bottom:48px;
+  flex:0 0 50%;
+  padding-bottom:64px;
+  padding-left:60px;
 }
 
 /* ================================================================
@@ -481,13 +486,12 @@ ul{list-style:none}
   .hero__features{grid-template-columns:1fr;gap:16px}
 
   .stations__inner{padding:0 20px}
-  .stations__compact-row{gap:32px}
-  .stations__compact-img{width:260px}
+  .stations__compact-img img{width:260px}
   .stations__compact-info{max-width:none}
-  .stations__plus-info{flex:0 0 280px;padding-bottom:32px}
-  .stations__plus-kiosk{flex:0 0 200px;height:520px}
-  .stations__max-kiosk{flex:0 0 220px;height:520px}
-  .stations__max-info{flex:0 0 280px;padding-bottom:32px}
+  .stations__plus-info{padding-right:32px;padding-bottom:32px}
+  .stations__plus-kiosk img{height:580px}
+  .stations__max-kiosk img{height:640px}
+  .stations__max-info{padding-left:32px;padding-bottom:32px}
   .stations__compact-info .stations__row-arrow{width:120px}
   .stations__plus-info   .stations__row-arrow{width:160px}
   .stations__max-info    .stations__row-arrow{width:120px}
@@ -516,12 +520,17 @@ ul{list-style:none}
   .stations__compact-row{flex-direction:column;align-items:flex-start}
   .stations__compact-img{width:280px}
   .stations__compact-info{max-width:none;flex:none}
+  .stations__compact-row{flex-direction:column;gap:24px}
+  .stations__compact-img{flex:none;justify-content:flex-start}
+  .stations__compact-img img{width:260px}
   .stations__plus-row{flex-direction:column;align-items:flex-start;gap:24px}
-  .stations__plus-info{flex:none;width:auto;padding-bottom:0}
-  .stations__plus-kiosk{flex:none;width:180px;height:420px}
+  .stations__plus-info{flex:none;width:auto;padding-right:0;padding-bottom:0}
+  .stations__plus-kiosk{flex:none;justify-content:flex-start}
+  .stations__plus-kiosk img{height:380px}
   .stations__max-row{flex-direction:column;align-items:flex-start;gap:24px}
-  .stations__max-info{flex:none;width:auto;padding-bottom:0}
-  .stations__max-kiosk{flex:none;width:200px;height:420px}
+  .stations__max-info{flex:none;width:auto;padding-left:0;padding-bottom:0}
+  .stations__max-kiosk{flex:none;justify-content:flex-start}
+  .stations__max-kiosk img{height:420px}
   .stations__compact-info .stations__row-arrow{width:100px}
   .stations__plus-info   .stations__row-arrow{width:130px}
   .stations__max-info    .stations__row-arrow{width:100px}
