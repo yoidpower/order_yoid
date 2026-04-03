@@ -217,7 +217,10 @@ ul{list-style:none}
 
 .stations__showcase{
   position:relative;
-  margin-top:20px;
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  gap:80px;
 }
 
 /* Shared badge & text styles */
@@ -243,35 +246,36 @@ ul{list-style:none}
 .stations__max-info p{font-size:13px;color:#666;line-height:1.7;max-width:360px}
 
 /* Row arrows — placed inside info column above badge */
-.stations__row-arrow{display:block;margin-bottom:20px;height:auto}
-.stations__compact-info .stations__row-arrow{width:160px}
-.stations__plus-info   .stations__row-arrow{width:200px}
-.stations__max-info    .stations__row-arrow{width:160px}
+.stations__row-arrow{display:block;margin-bottom:16px;height:auto}
+.stations__compact-info .stations__row-arrow{width:140px}
+.stations__plus-info   .stations__row-arrow{width:180px}
+.stations__max-info    .stations__row-arrow{width:140px}
 
 /* ROW 1: COMPACT
-   Figma: image left ~320px, text right flex:1, vertically centered */
+   Figma: image left ~460px (portrait station), gap 60px, text right fills rest
+   Station PNG 1286×1798 ratio 0.715 → at 460px wide = 644px tall */
 .stations__compact-row{
   display:flex;
   align-items:center;
-  gap:80px;
-  margin-bottom:80px;
+  gap:60px;
+  margin-bottom:0;
 }
 .stations__compact-img{
-  flex:0 0 320px;
+  flex:0 0 460px;
 }
 .stations__compact-img img{width:100%;height:auto;display:block}
 .stations__compact-info{flex:1}
 
 /* ROW 2: PLUS
-   Figma: info left ~400px bottom-aligned, kiosk fills rest — overflow:hidden crop
-   PNG 1262×5518 ratio 0.229 — at full container width shows screen+rows big */
+   Figma: info left 440px bottom-aligned, kiosk fills rest with overflow:hidden crop
+   PNG 1262×5518 ratio 0.229 — rendered at ~620px wide = 2706px tall, crop 660px = 24% (screen+top rows) */
 .stations__plus-row{
   display:flex;
   align-items:flex-end;
-  margin-bottom:0;
+  margin-top:0;
 }
 .stations__plus-info{
-  flex:0 0 400px;
+  flex:0 0 440px;
   padding-bottom:56px;
 }
 .stations__plus-kiosk{
@@ -282,12 +286,12 @@ ul{list-style:none}
 .stations__plus-kiosk img{width:100%;height:auto;display:block}
 
 /* ROW 3: MAX
-   Figma: kiosk fills left side — overflow:hidden crop, info right ~400px bottom-aligned
-   PNG 1364×3952 ratio 0.345 — wider/taller than PLUS, shows more content at same height */
+   Figma: kiosk fills left side overflow:hidden, info right 440px bottom-aligned
+   PNG 1364×3952 ratio 0.345 — rendered at ~700px wide = 2028px tall, crop 700px = 35% (screen+slots) */
 .stations__max-row{
   display:flex;
   align-items:flex-end;
-  margin-top:80px;
+  margin-top:0;
 }
 .stations__max-kiosk{
   flex:1;
@@ -296,7 +300,7 @@ ul{list-style:none}
 }
 .stations__max-kiosk img{width:100%;height:auto;display:block}
 .stations__max-info{
-  flex:0 0 400px;
+  flex:0 0 440px;
   padding-bottom:56px;
 }
 
