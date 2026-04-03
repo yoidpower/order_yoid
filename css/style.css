@@ -103,7 +103,7 @@ ul{list-style:none}
 .nav__right{display:flex;align-items:center;gap:16px}
 
 /* ================================================================
-   HERO — Light bg with gradient stripes + dark card
+   HERO — background.png + dark card with left/right split
    ================================================================ */
 .hero{
   position:relative;
@@ -114,7 +114,7 @@ ul{list-style:none}
   overflow:hidden;
 }
 
-/* Diagonal gradient stripes (replaced by background.png) */
+/* Stripe divs kept in DOM but hidden */
 .hero__stripe{display:none}
 
 .hero__container{
@@ -123,7 +123,7 @@ ul{list-style:none}
   display:flex;flex-direction:column;align-items:center;gap:40px;
 }
 
-/* Dark card */
+/* ── Dark card ─────────────────────────────────────────────── */
 .hero__card{
   position:relative;
   background:var(--dark);
@@ -139,12 +139,13 @@ ul{list-style:none}
   padding:60px 56px 0;
 }
 
-.hero__text{
-  display:flex;flex-direction:column;gap:24px;
-  padding-bottom:60px;
+/* ── LEFT column: text ─────────────────────────────────────── */
+.hero__left{
+  display:flex;flex-direction:column;gap:28px;
+  padding-bottom:64px;
 }
 .hero__title{
-  font-size:clamp(28px,3.8vw,48px);
+  font-size:clamp(26px,3.6vw,46px);
   font-weight:900;line-height:1.08;
   letter-spacing:-.02em;text-transform:uppercase;
   color:var(--white);
@@ -157,16 +158,45 @@ ul{list-style:none}
 .hero__desc-box p{
   font-size:14px;line-height:1.7;color:rgba(255,255,255,.92);font-weight:500;
 }
-
-/* Image in hero card */
-.hero__img{
-  display:flex;align-items:flex-end;justify-content:center;
-  position:relative;
+/* CTA inside the card (left column) */
+.hero__cta-inline{
+  align-self:flex-start;
+  border-radius:24px;padding:14px 36px;font-size:12px;
 }
-.hero__device{
-  max-width:380px;width:100%;
+
+/* ── RIGHT column: image with arrow overlays ───────────────── */
+.hero__right{
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.hero__image-wrapper{
+  position:relative;
+  display:flex;align-items:flex-end;justify-content:center;
+  width:100%;
+}
+.hero__image{
+  max-width:380px;
+  width:100%;
+  object-fit:contain;
   border-radius:var(--radius-md) var(--radius-md) 0 0;
-  margin-bottom:-4px; /* slight overflow illusion */
+  margin-bottom:-4px;
+  display:block;
+}
+/* Arrow overlays — decorative, pointing toward station */
+.arrow{
+  position:absolute;
+  pointer-events:none;
+  opacity:0.45;
+  filter:brightness(0) invert(1); /* white on dark bg */
+}
+.arrow--left{
+  width:100px;
+  left:4px;
+  bottom:130px;
+}
+.arrow--right{
+  width:100px;
+  right:4px;
+  bottom:130px;
 }
 
 /* Green/yellow accent line at bottom of card */
@@ -177,12 +207,7 @@ ul{list-style:none}
   border-radius:0 0 4px 4px;
 }
 
-/* CTA button below card */
-.hero__cta{
-  border-radius:24px;padding:14px 36px;font-size:12px;
-}
-
-/* Feature cards below CTA */
+/* ── Feature cards below card ──────────────────────────────── */
 .hero__features{
   display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
   width:100%;max-width:var(--max-w);
@@ -478,10 +503,12 @@ ul{list-style:none}
 
   .hero{padding:calc(var(--nav-h) + 60px) 16px 48px}
   .hero__card-inner{grid-template-columns:1fr;gap:24px;padding:40px 28px 0}
-  .hero__text{padding-bottom:32px}
+  .hero__left{padding-bottom:32px}
   .hero__title{font-size:clamp(26px,6vw,36px)}
-  .hero__img{order:-1}
-  .hero__device{max-width:280px}
+  .hero__right{order:-1}
+  .hero__image{max-width:280px}
+  .arrow--left{left:-10px;width:80px}
+  .arrow--right{right:-10px;width:80px}
   .hero__features{grid-template-columns:1fr;gap:16px}
 
   .stations__inner{padding:0 20px}

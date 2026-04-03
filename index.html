@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css?v=28">
+  <link rel="stylesheet" href="css/style.css?v=29">
 </head>
 <body>
 
@@ -27,30 +27,34 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <!-- Diagonal gradient stripes -->
-    <div class="hero__stripe hero__stripe--purple"></div>
-    <div class="hero__stripe hero__stripe--pink"></div>
-    <div class="hero__stripe hero__stripe--teal"></div>
 
     <div class="hero__container">
       <div class="hero__card">
         <div class="hero__card-inner">
-          <div class="hero__text">
+
+          <!-- LEFT: text content -->
+          <div class="hero__left">
             <h1 class="hero__title">UPGRADE YOUR LOCATION WITH A YOID STATION</h1>
             <div class="hero__desc-box">
               <p>Plug-and-play powerbank stations that keep customers charged, engaged, and on-site longer — with zero operational effort.</p>
             </div>
+            <a href="#contact" class="btn btn--pink hero__cta-inline">REQUEST A STATION</a>
           </div>
-          <div class="hero__img">
-            <img src="images/station_top_page.png" alt="YOID Compact Station" class="hero__device">
+
+          <!-- RIGHT: station image with arrow overlays -->
+          <div class="hero__right">
+            <div class="hero__image-wrapper">
+              <img src="images/station_top_page.png" alt="YOID Compact Station" class="hero__image">
+              <img src="images/arrow-left.svg" class="arrow arrow--left" alt="">
+              <img src="images/arrow-right.svg" class="arrow arrow--right" alt="">
+            </div>
           </div>
+
         </div>
         <div class="hero__accent-line"></div>
       </div>
 
-      <a href="#contact" class="btn btn--pink hero__cta">REQUEST A STATION</a>
-
-      <div class="hero__features" data-aos="fade-up" data-aos-delay="200">
+      <div class="hero__features">
         <div class="hero__feat-card">
           <div class="hero__feat-icon">
             <img src="images/plugnplay.png" alt="Plug & Play">
