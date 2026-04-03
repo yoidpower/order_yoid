@@ -101,13 +101,6 @@ ul{list-style:none}
 .nav__logo-img{height:28px;width:auto}
 
 .nav__right{display:flex;align-items:center;gap:16px}
-.nav__icon{
-  display:flex;align-items:center;justify-content:center;
-  width:40px;height:40px;border-radius:50%;
-  background:rgba(0,0,0,.04);
-  transition:background var(--tr);
-}
-.nav__icon:hover{background:rgba(0,0,0,.08)}
 
 /* ================================================================
    HERO — Light bg with gradient stripes + dark card
@@ -268,52 +261,66 @@ ul{list-style:none}
 .stations__plus-info p,
 .stations__max-info p{font-size:13px;color:#666;line-height:1.7;max-width:360px}
 
-/* Row arrows — sized per arrow's natural proportions */
+/* Row arrows */
 .stations__row-arrow{display:block;margin-bottom:20px;height:auto}
-.stations__compact-info .stations__row-arrow{width:130px}
-.stations__plus-info .stations__row-arrow{width:220px}
-.stations__max-info .stations__row-arrow{width:130px}
+.stations__compact-info .stations__row-arrow{width:140px}
+.stations__plus-info   .stations__row-arrow{width:200px}
+.stations__max-info    .stations__row-arrow{width:140px}
 
 /* ROW 1: COMPACT — image left, text right */
 .stations__compact-row{
-  display:grid;
-  grid-template-columns:420px 1fr;
-  gap:80px;
+  display:flex;
   align-items:center;
+  gap:80px;
 }
-.stations__compact-img{width:420px;flex-shrink:0}
+.stations__compact-img{
+  flex-shrink:0;
+  width:400px;
+  overflow:hidden;
+  max-height:560px;
+}
 .stations__compact-img img{width:100%;height:auto;display:block}
-.stations__compact-info{padding-top:0}
+.stations__compact-info{max-width:420px}
 
-/* ROW 2: PLUS — text left, kiosk right (transparent PNG, very tall) */
+/* ROW 2: PLUS — text left (bottom), kiosk right */
 .stations__plus-row{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:80px;
-  align-items:end;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:60px;
 }
-.stations__plus-info{padding-bottom:40px}
-.stations__plus-kiosk{flex-shrink:0}
-.stations__plus-kiosk img{
-  display:block;
-  width:auto;
-  max-height:700px;
+.stations__plus-info{
+  flex-shrink:0;
+  max-width:360px;
+  padding-bottom:48px;
 }
+.stations__plus-kiosk{
+  flex-shrink:0;
+  width:230px;
+  height:700px;
+  overflow:hidden;
+}
+.stations__plus-kiosk img{width:100%;height:auto;display:block}
 
-/* ROW 3: MAX — kiosk left, text right (transparent PNG, tall) */
+/* ROW 3: MAX — kiosk left, text right (bottom) */
 .stations__max-row{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:80px;
-  align-items:end;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:60px;
 }
-.stations__max-kiosk{flex-shrink:0}
-.stations__max-kiosk img{
-  display:block;
-  width:auto;
-  max-height:700px;
+.stations__max-kiosk{
+  flex-shrink:0;
+  width:260px;
+  height:700px;
+  overflow:hidden;
 }
-.stations__max-info{padding-bottom:40px}
+.stations__max-kiosk img{width:100%;height:auto;display:block}
+.stations__max-info{
+  flex-shrink:0;
+  max-width:360px;
+  padding-bottom:48px;
+}
 
 /* ================================================================
    COLLECTION — WHITE background, dark cards in swiper
@@ -496,15 +503,18 @@ ul{list-style:none}
   .hero__features{grid-template-columns:1fr;gap:16px}
 
   .stations__inner{padding:0 20px}
-  .stations__compact-row{grid-template-columns:280px 1fr;gap:32px}
-  .stations__compact-img{width:280px}
-  .stations__plus-row{grid-template-columns:1fr auto;gap:32px}
-  .stations__plus-kiosk img{max-height:500px}
-  .stations__max-row{grid-template-columns:auto 1fr;gap:32px}
-  .stations__max-kiosk img{max-height:500px}
+  .stations__compact-row{gap:32px}
+  .stations__compact-img{width:260px;max-height:364px}
+  .stations__compact-info{max-width:none}
+  .stations__plus-row{gap:32px}
+  .stations__plus-kiosk{width:160px;height:500px}
+  .stations__plus-info{max-width:260px;padding-bottom:32px}
+  .stations__max-row{gap:32px}
+  .stations__max-kiosk{width:180px;height:500px}
+  .stations__max-info{max-width:260px;padding-bottom:32px}
   .stations__compact-info .stations__row-arrow{width:100px}
-  .stations__plus-info .stations__row-arrow{width:160px}
-  .stations__max-info .stations__row-arrow{width:100px}
+  .stations__plus-info   .stations__row-arrow{width:150px}
+  .stations__max-info    .stations__row-arrow{width:100px}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
   .collection__header{padding:0 20px}
@@ -527,15 +537,17 @@ ul{list-style:none}
   .stations{padding:72px 0}
   .collection{padding:72px 0}
   .contact{padding:72px 0 40px}
-  .stations__compact-row{grid-template-columns:1fr}
-  .stations__compact-img{width:280px}
-  .stations__plus-row{grid-template-columns:1fr}
-  .stations__plus-kiosk img{max-height:380px}
-  .stations__max-row{grid-template-columns:1fr}
-  .stations__max-kiosk img{max-height:380px}
-  .stations__compact-info .stations__row-arrow{width:90px}
-  .stations__plus-info .stations__row-arrow{width:130px}
-  .stations__max-info .stations__row-arrow{width:90px}
+  .stations__compact-row{flex-direction:column;align-items:flex-start}
+  .stations__compact-img{width:260px;max-height:364px}
+  .stations__plus-row{flex-direction:column;align-items:flex-start}
+  .stations__plus-kiosk{width:160px;height:380px}
+  .stations__plus-info{max-width:none;padding-bottom:0}
+  .stations__max-row{flex-direction:column;align-items:flex-start}
+  .stations__max-kiosk{width:180px;height:380px}
+  .stations__max-info{max-width:none;padding-bottom:0}
+  .stations__compact-info .stations__row-arrow{width:80px}
+  .stations__plus-info   .stations__row-arrow{width:110px}
+  .stations__max-info    .stations__row-arrow{width:80px}
   .collection__swiper .swiper-slide{width:160px!important}
   .collection__card{width:160px}
   .contact__newsletter-btn{padding:16px 40px;font-size:12px}
