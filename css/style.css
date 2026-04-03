@@ -260,7 +260,7 @@ ul{list-style:none}
   overflow:hidden;
 }
 .stations__compact-img img{width:100%;height:auto;display:block}
-.stations__compact-info{flex:1;max-width:480px}
+.stations__compact-info{flex:1}
 
 /* ROW 2: PLUS — text left (bottom), kiosk right */
 .stations__plus-row{
@@ -269,13 +269,11 @@ ul{list-style:none}
   gap:80px;
 }
 .stations__plus-info{
-  flex-shrink:0;
-  width:380px;
+  flex:0 0 380px;
   padding-bottom:48px;
 }
 .stations__plus-kiosk{
-  flex-shrink:0;
-  width:340px;
+  flex:1;
   height:720px;
   overflow:hidden;
 }
@@ -288,15 +286,13 @@ ul{list-style:none}
   gap:80px;
 }
 .stations__max-kiosk{
-  flex-shrink:0;
-  width:380px;
+  flex:1;
   height:720px;
   overflow:hidden;
 }
 .stations__max-kiosk img{width:100%;height:auto;display:block}
 .stations__max-info{
-  flex-shrink:0;
-  width:380px;
+  flex:0 0 380px;
   padding-bottom:48px;
 }
 
