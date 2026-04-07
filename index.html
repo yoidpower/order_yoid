@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css?v=29">
+  <link rel="stylesheet" href="css/style.css?v=31">
 </head>
 <body>
 
@@ -25,58 +25,59 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO — absolute layout matching Figma 1920px canvas -->
   <section class="hero" id="home">
+    <div class="hero__canvas">
 
-    <div class="hero__container">
-      <div class="hero__card">
-        <div class="hero__card-inner">
+      <!-- Dark card background -->
+      <div class="hc__card"></div>
 
-          <!-- LEFT: text content -->
-          <div class="hero__left">
-            <h1 class="hero__title">UPGRADE YOUR LOCATION WITH A YOID STATION</h1>
-            <div class="hero__desc-box">
-              <p>Plug-and-play powerbank stations that keep customers charged, engaged, and on-site longer — with zero operational effort.</p>
-            </div>
-            <a href="#contact" class="btn btn--pink hero__cta-inline">REQUEST A STATION</a>
-          </div>
+      <!-- H1 title -->
+      <h1 class="hc__title">UPGRADE YOUR LOCATION WITH A YOID STATION</h1>
 
-          <!-- RIGHT: station image with arrow overlays -->
-          <div class="hero__right">
-            <div class="hero__image-wrapper">
-              <img src="images/station_top_page.png" alt="YOID Compact Station" class="hero__image">
-              <img src="images/arrow-left.svg" class="arrow arrow--left" alt="">
-              <img src="images/arrow-right.svg" class="arrow arrow--right" alt="">
-            </div>
-          </div>
-
-        </div>
-        <div class="hero__accent-line"></div>
+      <!-- Orange/red description box -->
+      <div class="hc__desc">
+        <p>Plug-and-play powerbank stations that keep customers charged, engaged, and on-site longer — with zero operational effort.</p>
       </div>
 
-      <div class="hero__features">
-        <div class="hero__feat-card">
-          <div class="hero__feat-icon">
-            <img src="images/plugnplay.png" alt="Plug & Play">
-          </div>
-          <h3>Plug & Play</h3>
-          <p>No setup, no Wi-Fi. Just plug into power and go live instantly.</p>
-        </div>
-        <div class="hero__feat-card">
-          <div class="hero__feat-icon">
-            <img src="images/fully_automated.png" alt="Fully Automated">
-          </div>
-          <h3>Fully Automated</h3>
-          <p>No staff involvement. Customers take, use, and return powerbanks independently.</p>
-        </div>
-        <div class="hero__feat-card">
-          <div class="hero__feat-icon">
-            <img src="images/revenue_retention.png" alt="Revenue & Retention">
-          </div>
-          <h3>Revenue & Retention</h3>
-          <p>Increase dwell time and create a new revenue stream effortlessly.</p>
-        </div>
+      <!-- CTA button -->
+      <a href="#contact" class="hc__btn">REQUEST A STATION</a>
+
+      <!-- Station image -->
+      <div class="hc__img-box">
+        <img src="images/station_top_page.png" alt="YOID Station" class="hc__img">
       </div>
+
+      <!-- Arrow left (points toward station) -->
+      <div class="hc__arrow hc__arrow--left">
+        <img src="images/arrow-left.svg" alt="">
+      </div>
+
+      <!-- Arrow right (points toward station) -->
+      <div class="hc__arrow hc__arrow--right">
+        <img src="images/arrow-right.svg" alt="">
+      </div>
+
+      <!-- Accent line at card bottom -->
+      <div class="hc__accent"></div>
+
+      <!-- Feature cards -->
+      <div class="hc__feat hc__feat--1">
+        <div class="hc__feat-icon"><img src="images/plugnplay.png" alt="Plug &amp; Play"></div>
+        <h3>Plug &amp; Play</h3>
+        <p>No setup, no Wi-Fi. Just plug into power and go live instantly.</p>
+      </div>
+      <div class="hc__feat hc__feat--2">
+        <div class="hc__feat-icon"><img src="images/fully_automated.png" alt="Fully Automated"></div>
+        <h3>Fully Automated</h3>
+        <p>No staff involvement. Customers take, use, and return powerbanks independently.</p>
+      </div>
+      <div class="hc__feat hc__feat--3">
+        <div class="hc__feat-icon"><img src="images/revenue_retention.png" alt="Revenue &amp; Retention"></div>
+        <h3>Revenue &amp; Retention</h3>
+        <p>Increase dwell time and create a new revenue stream effortlessly.</p>
+      </div>
+
     </div>
   </section>
 

@@ -7,6 +7,18 @@
 (function () {
   'use strict';
 
+  // ── Hero canvas: scale 1920px reference to viewport width ───
+  function scaleHeroCanvas() {
+    const canvas = document.querySelector('.hero__canvas');
+    const hero   = document.querySelector('.hero');
+    if (!canvas || !hero) return;
+    const scale = window.innerWidth / 1920;
+    canvas.style.transform = 'scale(' + scale + ')';
+    hero.style.height = Math.round(960 * scale) + 'px';
+  }
+  scaleHeroCanvas();
+  window.addEventListener('resize', scaleHeroCanvas, { passive: true });
+
   // ── Navbar: scroll shadow + active state ─────────────────────
   const nav = document.getElementById('mainNav');
   if (nav) {

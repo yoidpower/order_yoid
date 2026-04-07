@@ -103,136 +103,166 @@ ul{list-style:none}
 .nav__right{display:flex;align-items:center;gap:16px}
 
 /* ================================================================
-   HERO — background.png + dark card with left/right split
+   HERO — absolute layout from Figma 1920px canvas
+   Canvas: 1920 × 960
+   Dark card: x=90 y=96 w=1740 h=590
+   Station img: x=1007 y=0 w=693 h=590 (right-aligned in card)
+   H1 text: x=146 y=60 w=750
+   Desc box: x=146 y=~290 w=635
+   CTA button: x=146 y=~430 w=195 h=52
+   Arrow-L: x=880 y=310 w=120
+   Arrow-R: x=1715 y=310 w=120
+   Features: y=720 — 3 cards each w=540 gap=60
    ================================================================ */
+
+/* ── Section shell ─────────────────────────────────────────── */
 .hero{
   position:relative;
-  min-height:100vh;
+  width:100%;
   background:url('../images/background.png') top center / cover no-repeat;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:calc(var(--nav-h) + 40px) 24px 60px;
   overflow:hidden;
+  /* height driven by canvas */
 }
 
-/* Stripe divs kept in DOM but hidden */
-.hero__stripe{display:none}
-
-.hero__container{
-  position:relative;z-index:1;
-  max-width:var(--max-w);width:100%;
-  display:flex;flex-direction:column;align-items:center;gap:40px;
+/* ── Canvas: 1920px reference space, scales with viewport ──── */
+.hero__canvas{
+  position:relative;
+  /* Use a 1920-wide reference → scale to viewport via transform */
+  width:1920px;
+  height:960px;
+  transform-origin:top left;
+  /* JS will set transform:scale() — see main.js */
 }
 
 /* ── Dark card ─────────────────────────────────────────────── */
-.hero__card{
-  position:relative;
+.hc__card{
+  position:absolute;
+  left:90px; top:96px;
+  width:1740px; height:590px;
   background:var(--dark);
-  border-radius:var(--radius-lg);
-  width:100%;
+  border-radius:28px;
   overflow:hidden;
 }
-.hero__card-inner{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:end;
-  gap:32px;
-  padding:60px 56px 0;
-}
 
-/* ── LEFT column: text ─────────────────────────────────────── */
-.hero__left{
-  display:flex;flex-direction:column;gap:28px;
-  padding-bottom:64px;
-}
-.hero__title{
-  font-size:clamp(26px,3.6vw,46px);
-  font-weight:900;line-height:1.08;
-  letter-spacing:-.02em;text-transform:uppercase;
+/* ── H1 title ──────────────────────────────────────────────── */
+.hc__title{
+  position:absolute;
+  left:200px; top:156px;
+  width:750px;
+  font-size:56px;
+  font-weight:900;line-height:1.05;
+  letter-spacing:-.03em;text-transform:uppercase;
   color:var(--white);
-}
-.hero__desc-box{
-  background:linear-gradient(135deg,#F97316 0%,#E8175D 100%);
-  border-radius:var(--radius-md);
-  padding:20px 24px;
-}
-.hero__desc-box p{
-  font-size:14px;line-height:1.7;color:rgba(255,255,255,.92);font-weight:500;
-}
-/* CTA inside the card (left column) */
-.hero__cta-inline{
-  align-self:flex-start;
-  border-radius:24px;padding:14px 36px;font-size:12px;
+  z-index:2;
 }
 
-/* ── RIGHT column: image with arrow overlays ───────────────── */
-.hero__right{
-  display:flex;align-items:flex-end;justify-content:center;
+/* ── Orange/red description box ────────────────────────────── */
+.hc__desc{
+  position:absolute;
+  left:200px; top:380px;
+  width:635px;
+  background:linear-gradient(135deg,#F97316 0%,#E8175D 100%);
+  border-radius:16px;
+  padding:20px 24px;
+  z-index:2;
 }
-.hero__image-wrapper{
-  position:relative;
-  display:flex;align-items:flex-end;justify-content:center;
-  width:100%;
+.hc__desc p{
+  font-size:15px;line-height:1.7;color:rgba(255,255,255,.92);font-weight:500;
+  margin:0;
 }
-.hero__image{
-  max-width:380px;
+
+/* ── CTA button ────────────────────────────────────────────── */
+.hc__btn{
+  position:absolute;
+  left:200px; top:532px;
+  width:220px; height:52px;
+  background:var(--pink);
+  color:#fff;
+  border-radius:26px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font);font-weight:800;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;
+  z-index:2;
+  transition:background var(--tr),box-shadow var(--tr);
+}
+.hc__btn:hover{background:#c4124e;box-shadow:0 8px 24px rgba(232,23,93,.35)}
+
+/* ── Station image box ─────────────────────────────────────── */
+.hc__img-box{
+  position:absolute;
+  left:1007px; top:96px;
+  width:693px; height:590px;
+  overflow:hidden;
+  z-index:2;
+}
+.hc__img{
   width:100%;
+  height:100%;
   object-fit:contain;
-  border-radius:var(--radius-md) var(--radius-md) 0 0;
-  margin-bottom:-4px;
+  object-position:center bottom;
   display:block;
 }
-/* Arrow overlays — decorative, pointing toward station */
-.arrow{
+
+/* ── Arrows ────────────────────────────────────────────────── */
+.hc__arrow{
   position:absolute;
+  z-index:3;
   pointer-events:none;
-  opacity:0.45;
-  filter:brightness(0) invert(1); /* white on dark bg */
+  opacity:0.5;
+  filter:brightness(0) invert(1);
 }
-.arrow--left{
-  width:100px;
-  left:4px;
-  bottom:130px;
+.hc__arrow img{display:block;width:100%;height:auto}
+.hc__arrow--left{
+  left:880px; top:330px;
+  width:120px;
 }
-.arrow--right{
-  width:100px;
-  right:4px;
-  bottom:130px;
+.hc__arrow--right{
+  left:1714px; top:330px;
+  width:120px;
 }
 
-/* Green/yellow accent line at bottom of card */
-.hero__accent-line{
-  position:absolute;bottom:0;left:5%;right:5%;
-  height:4px;
+/* ── Accent line at card bottom ────────────────────────────── */
+.hc__accent{
+  position:absolute;
+  left:135px; top:682px;
+  width:1650px; height:4px;
   background:linear-gradient(90deg,#4ECDC4,#A8E06C,#F9E547);
   border-radius:0 0 4px 4px;
+  z-index:3;
 }
 
-/* ── Feature cards below card ──────────────────────────────── */
-.hero__features{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
-  width:100%;max-width:var(--max-w);
-}
-.hero__feat-card{
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(8px);
+/* ── Feature cards ─────────────────────────────────────────── */
+.hc__feat{
+  position:absolute;
+  top:720px;
+  width:520px; height:180px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(10px);
   border:1px solid rgba(0,0,0,.06);
-  border-radius:var(--radius-md);
-  padding:28px 24px;
-  display:flex;flex-direction:column;gap:8px;
+  border-radius:16px;
+  padding:28px 28px;
+  display:flex;flex-direction:column;gap:6px;
+  z-index:2;
 }
-.hero__feat-card h3{
-  font-size:16px;font-weight:700;color:#222;
-  display:flex;align-items:center;gap:10px;
-}
-.hero__feat-card p{
-  font-size:13px;color:#666;line-height:1.6;
-}
-.hero__feat-icon{
+.hc__feat--1{left:90px}
+.hc__feat--2{left:670px}
+.hc__feat--3{left:1250px}
+
+.hc__feat-icon{
   width:40px;height:40px;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  margin-bottom:8px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:6px;flex-shrink:0;
 }
-.hero__feat-icon img{width:100%;height:100%;object-fit:contain}
+.hc__feat-icon img{width:100%;height:100%;object-fit:contain}
+.hc__feat h3{
+  font-size:17px;font-weight:700;color:#111;
+  display:flex;align-items:center;gap:10px;
+  margin:0;
+}
+.hc__feat p{
+  font-size:13px;color:#555;line-height:1.6;margin:0;
+}
 
 /* ================================================================
    STATIONS — white bg, staggered layout matching Figma
@@ -501,15 +531,7 @@ ul{list-style:none}
   .nav__inner{padding:0 20px}
   .btn--order{font-size:10px;padding:8px 16px}
 
-  .hero{padding:calc(var(--nav-h) + 60px) 16px 48px}
-  .hero__card-inner{grid-template-columns:1fr;gap:24px;padding:40px 28px 0}
-  .hero__left{padding-bottom:32px}
-  .hero__title{font-size:clamp(26px,6vw,36px)}
-  .hero__right{order:-1}
-  .hero__image{max-width:280px}
-  .arrow--left{left:-10px;width:80px}
-  .arrow--right{right:-10px;width:80px}
-  .hero__features{grid-template-columns:1fr;gap:16px}
+  /* hero scales via JS transform — no overrides needed */
 
   .stations__inner{padding:0 20px}
   .stations__compact-row{gap:40px;margin-bottom:56px}
@@ -536,11 +558,7 @@ ul{list-style:none}
 @media(max-width:576px){
   :root{--nav-h:60px}
   .nav{width:calc(100% - 24px);top:8px}
-  .hero{min-height:auto;padding-bottom:40px}
-  .hero__card-inner{padding:28px 20px 0}
-  .hero__title{font-size:26px}
-  .hero__desc-box{padding:16px 18px}
-  .hero__features{gap:12px}
+  /* hero scales via JS transform — no overrides needed */
   .stations{padding:72px 0}
   .collection{padding:72px 0}
   .contact{padding:72px 0 40px}
