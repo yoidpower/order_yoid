@@ -103,175 +103,173 @@ ul{list-style:none}
 .nav__right{display:flex;align-items:center;gap:16px}
 
 /* ================================================================
-   HERO — absolute layout matching Figma 1920px canvas
-   Verified positions from DOM at 1440px viewport (scale=0.75)
-   All values below are in the 1920px reference space.
-
-   canvas:      1920 × 960
-   dark card:   left=90   top=96   w=1740  h=590
-   H1 title:    left=200  top=156  w=861
-   desc box:    left=200  top=380  w=635
-   CTA btn:     left=200  top=532  w=220   h=52
-   img-box:     left=1007 top=0    w=693   h=741  ← overflows above card (Figma: Device-LEFT 693×741)
-   arrow-left:  left=880  top=330  w=120
-   arrow-right: left=1714 top=330  w=120
-   accent line: left=135  top=682  w=1650  h=4
-   feat cards:  top=720   h=180   each w=520  gaps at left=90/670/1250
+   HERO — EXACT Figma coordinates. Canvas: 1512 × 756.
+   Source of truth JSON (DO NOT CHANGE):
+   card:        top=76   left=71   w=1370  h=465
+   title:       top=123  left=158  w=591   h=93
+   desc:        top=299  left=158  w=500   h=72
+   button:      top=419  left=158  w=173   h=41
+   image-box:   top=76   left=793  w=546   h=465
+   arrow-left:  top=260  left=693  w=95    h=52
+   arrow-right: top=260  left=1350 w=95    h=52
    ================================================================ */
 
 /* ── Section shell ─────────────────────────────────────────── */
-.hero{
-  position:relative;
-  width:100%;
-  background:url('../images/background.png') top center / cover no-repeat;
-  overflow:hidden;
-  /* height driven by JS canvas scaling */
+.hero {
+  position: relative;
+  width: 100%;
+  background: url('../images/background.png') top center / cover no-repeat;
+  overflow: hidden;
+  /* height set by JS: 756 * scale */
 }
 
-/* ── Canvas: 1920px reference space, scaled to viewport via JS ── */
-.hero__canvas{
-  position:relative;
-  width:1920px;
-  height:960px;
-  transform-origin:top left;
-  /* JS sets: transform:scale(vw/1920); hero.height = 960*scale */
+/* ── Canvas ─────────────────────────────────────────────────── */
+.hero__canvas {
+  position: relative;
+  width: 1512px;
+  height: 756px;
+  margin: 0 auto;
+  /* JS sets zoom: vw/1512 */
 }
 
-/* ── Dark card — NO overflow:hidden so device can overflow above ── */
-.hc__card{
-  position:absolute;
-  left:90px; top:96px;
-  width:1740px; height:590px;
-  background:var(--dark);
-  border-radius:28px;
-  z-index:1;
-  /* intentionally NO overflow:hidden */
+/* ── CARD ───────────────────────────────────────────────────── */
+.hero__card {
+  position: absolute;
+  top: 76px;
+  left: 71px;
+  width: 1370px;
+  height: 465px;
+  background: var(--dark);
+  border-radius: 24px;
+  z-index: 1;
 }
 
-/* ── H1 title ──────────────────────────────────────────────── */
-.hc__title{
-  position:absolute;
-  left:200px; top:156px;
-  width:861px;
-  font-size:56px;
-  font-weight:900;line-height:1.05;
-  letter-spacing:-.03em;text-transform:uppercase;
-  color:var(--white);
-  z-index:3;
+/* ── TITLE ──────────────────────────────────────────────────── */
+.hero__title {
+  position: absolute;
+  top: 123px;
+  left: 158px;
+  width: 591px;
+  height: 93px;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }
 
-/* ── Orange/red description box ────────────────────────────── */
-.hc__desc{
-  position:absolute;
-  left:200px; top:380px;
-  width:635px;
-  background:linear-gradient(135deg,#F97316 0%,#E8175D 100%);
-  border-radius:16px;
-  padding:20px 24px;
-  z-index:3;
+/* ── DESC BOX ───────────────────────────────────────────────── */
+.hero__desc {
+  position: absolute;
+  top: 299px;
+  left: 158px;
+  width: 500px;
+  height: 72px;
+  background: linear-gradient(135deg, #F97316 0%, #E8175D 100%);
+  border-radius: 14px;
+  padding: 14px 20px;
+  z-index: 3;
+  overflow: hidden;
 }
-.hc__desc p{
-  font-size:15px;line-height:1.7;color:rgba(255,255,255,.92);font-weight:500;
-  margin:0;
-}
-
-/* ── CTA button ────────────────────────────────────────────── */
-.hc__btn{
-  position:absolute;
-  left:200px; top:532px;
-  width:220px; height:52px;
-  background:var(--pink);
-  color:#fff;
-  border-radius:26px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font);font-weight:800;
-  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-  text-decoration:none;
-  z-index:3;
-  transition:background var(--tr),box-shadow var(--tr);
-}
-.hc__btn:hover{background:#c4124e;box-shadow:0 8px 24px rgba(232,23,93,.35)}
-
-/* ── Station image box ─────────────────────────────────────────
-   top:0 — starts at canvas top, overflows 96px above dark card.
-   height:741px — full Figma device height (693×741 from Figma).
-   The device screen/top extends above the card boundary on the
-   gradient background — matches Figma Device-LEFT positioning.
-   ─────────────────────────────────────────────────────────── */
-.hc__img-box{
-  position:absolute;
-  left:1007px; top:0;
-  width:693px; height:741px;
-  z-index:4;
-  /* NO overflow:hidden — full device must be visible */
-}
-.hc__img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center top;
-  display:block;
+.hero__desc p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,.93);
+  font-weight: 500;
+  margin: 0;
 }
 
-/* ── Arrows ────────────────────────────────────────────────── */
-.hc__arrow{
-  position:absolute;
-  z-index:5;
-  pointer-events:none;
-  opacity:0.55;
-  filter:brightness(0) invert(1);
+/* ── BUTTON ─────────────────────────────────────────────────── */
+.hero__btn {
+  position: absolute;
+  top: 419px;
+  left: 158px;
+  width: 173px;
+  height: 41px;
+  background: var(--pink);
+  color: #fff;
+  border-radius: 21px;
+  display: block;
+  text-align: center;
+  line-height: 41px;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 3;
+  transition: background var(--tr), box-shadow var(--tr);
 }
-.hc__arrow img{display:block;width:100%;height:auto}
-.hc__arrow--left{
-  left:880px; top:330px;
-  width:120px;
+.hero__btn:hover { background: #c4124e; box-shadow: 0 6px 20px rgba(232,23,93,.35); }
+
+/* ── IMAGE BOX ──────────────────────────────────────────────── */
+.hero__image-box {
+  position: absolute;
+  top: 76px;
+  left: 793px;
+  width: 546px;
+  height: 465px;
+  z-index: 4;
 }
-.hc__arrow--right{
-  left:1714px; top:330px;
-  width:120px;
+.hero__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
-/* ── Accent line at card bottom ────────────────────────────── */
-.hc__accent{
-  position:absolute;
-  left:135px; top:682px;
-  width:1650px; height:4px;
-  background:linear-gradient(90deg,#4ECDC4,#A8E06C,#F9E547);
-  border-radius:0 0 4px 4px;
-  z-index:3;
+/* ── ARROWS ─────────────────────────────────────────────────── */
+.hero__arrow {
+  position: absolute;
+  width: 95px;
+  height: 52px;
+  display: block;
+  z-index: 5;
+  opacity: 0.55;
+  filter: brightness(0) invert(1);
+}
+.hero__arrow--left {
+  top: 260px;
+  left: 693px;
+}
+.hero__arrow--right {
+  top: 260px;
+  left: 1350px;
 }
 
-/* ── Feature cards ─────────────────────────────────────────── */
-.hc__feat{
-  position:absolute;
-  top:720px;
-  width:520px; height:180px;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(0,0,0,.07);
-  border-radius:16px;
-  padding:28px;
-  display:flex;flex-direction:column;gap:6px;
-  z-index:6;
+/* ── FEATURE CARDS (below hero canvas, standard layout) ─────── */
+.hero-features {
+  background: var(--light-bg);
+  padding: 40px 0 56px;
 }
-.hc__feat--1{left:90px}
-.hc__feat--2{left:670px}
-.hc__feat--3{left:1250px}
-
-.hc__feat-icon{
-  width:36px;height:36px;
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:4px;flex-shrink:0;
+.hero-features__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
 }
-.hc__feat-icon img{width:100%;height:100%;object-fit:contain}
-.hc__feat h3{
-  font-size:16px;font-weight:700;color:#111;
-  margin:0;
+.hf__card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 16px;
+  padding: 28px;
 }
-.hc__feat p{
-  font-size:13px;color:#555;line-height:1.55;margin:0;
+.hf__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
 }
+.hf__icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.hf__title { font-size: 16px; font-weight: 700; color: #111; margin: 0 0 8px; }
+.hf__desc  { font-size: 13px; color: #555; line-height: 1.6; margin: 0; }
 
 /* ================================================================
    STATIONS — white bg, staggered layout matching Figma
