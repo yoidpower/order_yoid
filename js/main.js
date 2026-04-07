@@ -7,17 +7,17 @@
 (function () {
   'use strict';
 
-  // ── Hero canvas: scale 1512×756 canvas to viewport (zoom, no transform) ───
-  function scaleHeroCanvas() {
-    const canvas = document.querySelector('.hero__canvas');
-    const hero   = document.querySelector('.hero');
-    if (!canvas || !hero) return;
+  // ── Hero: scale 1512×756 canvas to viewport via transform ───
+  function scaleHero() {
+    const canvas  = document.querySelector('.hero-scale');
+    const wrapper = document.querySelector('.hero-wrapper');
+    if (!canvas || !wrapper) return;
     const scale = window.innerWidth / 1512;
-    canvas.style.zoom = scale;
-    hero.style.height = Math.round(756 * scale) + 'px';
+    canvas.style.transform  = 'scale(' + scale + ')';
+    wrapper.style.height    = Math.round(756 * scale) + 'px';
   }
-  scaleHeroCanvas();
-  window.addEventListener('resize', scaleHeroCanvas, { passive: true });
+  scaleHero();
+  window.addEventListener('resize', scaleHero, { passive: true });
 
   // ── Navbar: scroll shadow + active state ─────────────────────
   const nav = document.getElementById('mainNav');

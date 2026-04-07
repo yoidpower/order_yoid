@@ -103,8 +103,7 @@ ul{list-style:none}
 .nav__right{display:flex;align-items:center;gap:16px}
 
 /* ================================================================
-   HERO — EXACT Figma coordinates. Canvas: 1512 × 756.
-   Source of truth JSON (DO NOT CHANGE):
+   HERO — Source of truth: canvas 1512×756, all coords exact.
    card:        top=76   left=71   w=1370  h=465
    title:       top=123  left=158  w=591   h=93
    desc:        top=299  left=158  w=500   h=72
@@ -114,22 +113,24 @@ ul{list-style:none}
    arrow-right: top=260  left=1350 w=95    h=52
    ================================================================ */
 
-/* ── Section shell ─────────────────────────────────────────── */
-.hero {
+/* ── Wrapper: clips the scaled canvas, sets section height ──── */
+.hero-wrapper {
   position: relative;
   width: 100%;
-  background: url('../images/background.png') top center / cover no-repeat;
   overflow: hidden;
-  /* height set by JS: 756 * scale */
+  background: url('../images/background.png') top center / cover no-repeat;
+  height: 756px;           /* 1:1 at 1512px viewport */
 }
 
-/* ── Canvas ─────────────────────────────────────────────────── */
-.hero__canvas {
-  position: relative;
+/* ── Canvas: 1512×756 reference space, absolutely positioned ── */
+.hero-scale {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 1512px;
   height: 756px;
-  margin: 0 auto;
-  /* JS sets zoom: vw/1512 */
+  transform-origin: top left;
+  /* JS sets transform:scale(vw/1512) and wrapper height */
 }
 
 /* ── CARD ───────────────────────────────────────────────────── */
@@ -208,7 +209,7 @@ ul{list-style:none}
 }
 .hero__btn:hover { background: #c4124e; box-shadow: 0 6px 20px rgba(232,23,93,.35); }
 
-/* ── IMAGE BOX ──────────────────────────────────────────────── */
+/* ── IMAGE BOX — exact Figma: top=76 left=793 w=546 h=465 ───── */
 .hero__image-box {
   position: absolute;
   top: 76px;
@@ -224,7 +225,7 @@ ul{list-style:none}
   object-fit: contain;
 }
 
-/* ── ARROWS ─────────────────────────────────────────────────── */
+/* ── ARROWS — exact: top=260, left=693/1350, w=95, h=52 ─────── */
 .hero__arrow {
   position: absolute;
   width: 95px;
@@ -234,16 +235,10 @@ ul{list-style:none}
   opacity: 0.55;
   filter: brightness(0) invert(1);
 }
-.hero__arrow--left {
-  top: 260px;
-  left: 693px;
-}
-.hero__arrow--right {
-  top: 260px;
-  left: 1350px;
-}
+.hero__arrow--left  { top: 260px; left: 693px;  }
+.hero__arrow--right { top: 260px; left: 1350px; }
 
-/* ── FEATURE CARDS (below hero canvas, standard layout) ─────── */
+/* ── FEATURE CARDS (below hero, outside canvas) ─────────────── */
 .hero-features {
   background: var(--light-bg);
   padding: 40px 0 56px;
@@ -262,11 +257,7 @@ ul{list-style:none}
   border-radius: 16px;
   padding: 28px;
 }
-.hf__icon {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 12px;
-}
+.hf__icon { width: 36px; height: 36px; margin-bottom: 12px; }
 .hf__icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .hf__title { font-size: 16px; font-weight: 700; color: #111; margin: 0 0 8px; }
 .hf__desc  { font-size: 13px; color: #555; line-height: 1.6; margin: 0; }
