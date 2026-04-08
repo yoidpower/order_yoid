@@ -217,6 +217,7 @@ ul{list-style:none}
   width: 546px;
   height: 465px;
   z-index: 4;
+  overflow: visible;
 }
 .hero__image {
   width: 100%;
