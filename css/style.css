@@ -487,28 +487,27 @@ ul{list-style:none}
 }
 
 /* ================================================================
-   FOOTER — dark
+   FOOTER — dark bg (#0C0C14) per Figma spec
    ================================================================ */
 .footer{
-  background:var(--white);
+  background:var(--dark);
   padding:60px 0 0;
-  border-top:1px solid var(--border);
 }
 .footer__inner{max-width:var(--max-w);margin:0 auto;padding:0 40px}
 .footer__cols{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
-  padding-bottom:40px;border-bottom:1px solid var(--border);
+  padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);
 }
 .footer__col-title{
   font-size:13px;font-weight:800;text-transform:uppercase;
-  letter-spacing:.1em;color:#111;margin-bottom:16px;
+  letter-spacing:.1em;color:rgba(255,255,255,.9);margin-bottom:16px;
 }
 .footer__contact-list{display:flex;flex-direction:column;gap:8px;list-style:none}
-.footer__contact-list li{font-size:13px;color:#555;line-height:1.6}
-.footer__contact-list a{color:#555;transition:color var(--tr)}
+.footer__contact-list li{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6}
+.footer__contact-list a{color:rgba(255,255,255,.55);transition:color var(--tr)}
 .footer__contact-list a:hover{color:var(--pink)}
-.footer__col-right p{font-size:13px;color:#555;line-height:1.8}
-.footer__bottom{padding:20px 0;font-size:12px;color:#aaa}
+.footer__col-right p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.8}
+.footer__bottom{padding:20px 0;font-size:12px;color:rgba(255,255,255,.3)}
 
 /* Newsletter socials */
 .contact__socials{
