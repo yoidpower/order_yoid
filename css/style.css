@@ -321,41 +321,37 @@ ul{list-style:none}
 .stations__compact-info{flex:1}
 
 /* ROW 2: PLUS
-   Figma: info left 440px bottom-aligned, kiosk fills rest with overflow:hidden crop
-   PNG 1262×5518 ratio 0.229 — rendered at ~620px wide = 2706px tall, crop 660px = 24% (screen+top rows) */
+   JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
 .stations__plus-row{
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   margin-top:0;
 }
 .stations__plus-info{
   flex:0 0 440px;
-  padding-bottom:56px;
+  padding-bottom:0;
 }
 .stations__plus-kiosk{
   flex:1;
-  height:660px;
-  overflow:hidden;
+  overflow:visible;
 }
-.stations__plus-kiosk img{width:100%;height:auto;display:block}
+.stations__plus-kiosk img{width:100%;height:auto;display:block;object-fit:contain}
 
 /* ROW 3: MAX
-   Figma: kiosk fills left side overflow:hidden, info right 440px bottom-aligned
-   PNG 1364×3952 ratio 0.345 — rendered at ~700px wide = 2028px tall, crop 700px = 35% (screen+slots) */
+   JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
 .stations__max-row{
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   margin-top:0;
 }
 .stations__max-kiosk{
   flex:1;
-  height:700px;
-  overflow:hidden;
+  overflow:visible;
 }
-.stations__max-kiosk img{width:100%;height:auto;display:block}
+.stations__max-kiosk img{width:100%;height:auto;display:block;object-fit:contain}
 .stations__max-info{
   flex:0 0 440px;
-  padding-bottom:56px;
+  padding-bottom:0;
 }
 
 /* ================================================================
@@ -534,10 +530,10 @@ ul{list-style:none}
   .stations__inner{padding:0 20px}
   .stations__compact-row{gap:40px;margin-bottom:56px}
   .stations__compact-img{flex:0 0 240px}
-  .stations__plus-info{flex:0 0 280px;padding-bottom:32px}
-  .stations__plus-kiosk{height:520px}
-  .stations__max-kiosk{height:560px}
-  .stations__max-info{flex:0 0 280px;padding-bottom:32px}
+  .stations__plus-info{flex:0 0 280px;padding-bottom:0}
+  .stations__plus-kiosk{overflow:visible}
+  .stations__max-kiosk{overflow:visible}
+  .stations__max-info{flex:0 0 280px;padding-bottom:0}
   .stations__max-row{margin-top:56px}
   .stations__compact-info .stations__row-arrow{width:120px}
   .stations__plus-info   .stations__row-arrow{width:160px}
@@ -566,10 +562,10 @@ ul{list-style:none}
   .stations__compact-info{flex:none;width:auto}
   .stations__plus-row{flex-direction:column;align-items:flex-start;gap:24px}
   .stations__plus-info{flex:none;width:auto;padding-bottom:0}
-  .stations__plus-kiosk{flex:none;width:100%;height:320px}
+  .stations__plus-kiosk{flex:none;width:100%;overflow:visible}
   .stations__max-row{flex-direction:column;align-items:flex-start;gap:24px;margin-top:40px}
   .stations__max-info{flex:none;width:auto;padding-bottom:0}
-  .stations__max-kiosk{flex:none;width:100%;height:360px}
+  .stations__max-kiosk{flex:none;width:100%;overflow:visible}
   .stations__compact-info .stations__row-arrow{width:100px}
   .stations__plus-info   .stations__row-arrow{width:130px}
   .stations__max-info    .stations__row-arrow{width:100px}
