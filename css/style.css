@@ -148,11 +148,10 @@ ul{list-style:none}
 /* ── TITLE ──────────────────────────────────────────────────── */
 .hero__title {
   position: absolute;
-  top: 123px;
+  top: 100px;
   left: 158px;
   width: 591px;
-  height: 93px;
-  font-size: 48px;
+  font-size: 72px;
   font-weight: 900;
   line-height: 1.0;
   letter-spacing: -.03em;
@@ -167,10 +166,10 @@ ul{list-style:none}
 /* ── DESC BOX ───────────────────────────────────────────────── */
 .hero__desc {
   position: absolute;
-  top: 299px;
+  top: 338px;
   left: 158px;
   width: 500px;
-  height: 72px;
+  height: 80px;
   background: linear-gradient(135deg, #F97316 0%, #E8175D 100%);
   border-radius: 14px;
   padding: 14px 20px;
@@ -188,7 +187,7 @@ ul{list-style:none}
 /* ── BUTTON ─────────────────────────────────────────────────── */
 .hero__btn {
   position: absolute;
-  top: 419px;
+  top: 435px;
   left: 158px;
   width: 173px;
   height: 41px;
