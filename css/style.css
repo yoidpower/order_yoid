@@ -289,7 +289,7 @@ ul{list-style:none}
 
 /* Row arrows — placed inside info column above badge */
 .stations__row-arrow{display:block;margin-bottom:16px;height:auto}
-.stations__compact-info .stations__row-arrow{width:140px}
+.stations__compact-info .stations__row-arrow{width:220px;margin-left:-130px}
 .stations__plus-info   .stations__row-arrow{width:180px}
 .stations__max-info    .stations__row-arrow{width:140px}
 
