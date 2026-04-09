@@ -289,10 +289,10 @@ ul{list-style:none}
 
 /* Row arrows */
 .stations__row-arrow{display:block;height:auto}
-/* COMPACT: arrow absolutely positioned in the gap — NOT in text flow */
+/* COMPACT: arrow absolutely positioned at screen level (top), text sits lower */
 .stations__compact-info .stations__row-arrow{
   position:absolute;
-  top:28px;          /* aligns arrow tail with badge */
+  top:-30px;         /* near station screen level — top of the gap */
   left:-210px;       /* spans across gap into image area */
   width:210px;
   margin:0;
@@ -314,7 +314,7 @@ ul{list-style:none}
   flex:0 0 460px;
 }
 .stations__compact-img img{width:100%;height:auto;display:block}
-.stations__compact-info{flex:1;padding-top:80px;position:relative;z-index:1}
+.stations__compact-info{flex:1;padding-top:340px;position:relative;z-index:1}
 
 /* ROW 2: PLUS
    JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
