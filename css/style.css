@@ -226,18 +226,6 @@ ul{list-style:none}
   object-position: top center;
 }
 
-/* ── ARROWS ─────────────────────────────────────────────────── */
-.hero__arrow {
-  position: absolute;
-  width: 95px;
-  height: 52px;
-  display: block;
-  z-index: 5;
-  opacity: 0.55;
-  filter: brightness(0) invert(1);
-}
-.hero__arrow--left  { top: 340px; left: 730px;  }
-.hero__arrow--right { top: 340px; left: 1385px; }
 
 /* ── FEATURE CARDS (below hero, outside canvas) ─────────────── */
 .hero-features {
