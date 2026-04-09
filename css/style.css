@@ -334,8 +334,11 @@ ul{list-style:none}
 .stations__plus-kiosk{
   flex:1;
   overflow:visible;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.stations__plus-kiosk img{width:100%;height:auto;display:block;object-fit:contain}
+.stations__plus-kiosk img{width:auto;height:auto;max-height:600px;max-width:100%;display:block;object-fit:contain}
 
 /* ROW 3: MAX
    JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
@@ -347,8 +350,11 @@ ul{list-style:none}
 .stations__max-kiosk{
   flex:1;
   overflow:visible;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.stations__max-kiosk img{width:100%;height:auto;display:block;object-fit:contain}
+.stations__max-kiosk img{width:auto;height:auto;max-height:600px;max-width:100%;display:block;object-fit:contain}
 .stations__max-info{
   flex:0 0 440px;
   padding-bottom:0;
