@@ -289,11 +289,11 @@ ul{list-style:none}
 
 /* Row arrows */
 .stations__row-arrow{display:block;height:auto}
-/* COMPACT: arrow absolutely positioned at screen level (top), text sits lower */
+/* COMPACT: arrow absolutely positioned — values set via browser inspector */
 .stations__compact-info .stations__row-arrow{
   position:absolute;
-  top:-30px;         /* near station screen level — top of the gap */
-  left:-210px;       /* spans across gap into image area */
+  top:28px;
+  left:-90px;
   width:210px;
   margin:0;
 }
