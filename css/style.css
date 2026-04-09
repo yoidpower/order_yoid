@@ -314,7 +314,7 @@ ul{list-style:none}
   flex:0 0 460px;
 }
 .stations__compact-img img{width:100%;height:auto;display:block}
-.stations__compact-info{flex:1;padding-top:70px;padding-left:30px;position:relative;z-index:1}
+.stations__compact-info{flex:1;padding-top:70px;padding-left:82px;position:relative;z-index:1}
 /* Compact badge: 50% bigger + extra gap before title */
 .stations__compact-info .stations__badge{
   font-size:16px;padding:9px 24px;border-radius:9px;margin-bottom:60px;
