@@ -321,42 +321,40 @@ ul{list-style:none}
 }
 
 /* ROW 2: PLUS
-   JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
+   PNG 1262×5518 — tall slim kiosk, info left / kiosk far right */
 .stations__plus-row{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
+  justify-content:space-between;
   margin-top:0;
 }
 .stations__plus-info{
   flex:0 0 440px;
+  padding-top:160px;
   padding-bottom:0;
 }
 .stations__plus-kiosk{
-  flex:1;
+  flex:0 0 auto;
   overflow:visible;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
-.stations__plus-kiosk img{width:auto;height:auto;max-height:600px;max-width:100%;display:block;object-fit:contain}
+.stations__plus-kiosk img{height:760px;width:auto;max-height:none;max-width:none;display:block}
 
 /* ROW 3: MAX
-   JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
+   PNG 1364×3952 — tall slim kiosk, kiosk left / info right */
 .stations__max-row{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
+  justify-content:space-between;
   margin-top:0;
 }
 .stations__max-kiosk{
-  flex:1;
+  flex:0 0 auto;
   overflow:visible;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
-.stations__max-kiosk img{width:auto;height:auto;max-height:600px;max-width:100%;display:block;object-fit:contain}
+.stations__max-kiosk img{height:720px;width:auto;max-height:none;max-width:none;display:block}
 .stations__max-info{
   flex:0 0 440px;
+  padding-top:140px;
   padding-bottom:0;
 }
 
