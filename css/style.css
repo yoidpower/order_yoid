@@ -298,7 +298,7 @@ ul{list-style:none}
   margin:0;
 }
 /* PLUS / MAX: arrow stacked above badge */
-.stations__plus-info   .stations__row-arrow{width:180px;margin-bottom:16px}
+.stations__plus-info   .stations__row-arrow{width:220px;margin-bottom:16px}
 .stations__max-info    .stations__row-arrow{width:140px;margin-bottom:16px}
 
 /* ROW 1: COMPACT
@@ -321,16 +321,18 @@ ul{list-style:none}
 }
 
 /* ROW 2: PLUS
-   PNG 1262×5518 ratio 0.229 — at width:560px → height 2445px, clip top 920px
-   info left ~380px, kiosk right fills remaining space */
+   Info + kiosk grouped together (not spread to extremes).
+   Kiosk left edge aligns with compact image right edge (~460px into container).
+   info 320px + gap 140px = 460px → kiosk starts at same x as compact right edge */
 .stations__plus-row{
   display:flex;
   align-items:flex-start;
-  justify-content:space-between;
+  justify-content:flex-start;
+  gap:140px;
   margin-top:0;
 }
 .stations__plus-info{
-  flex:0 0 380px;
+  flex:0 0 320px;
   padding-top:140px;
   padding-bottom:0;
 }
