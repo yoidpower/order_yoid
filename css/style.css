@@ -321,23 +321,23 @@ ul{list-style:none}
 }
 
 /* ROW 2: PLUS
-   Info + kiosk grouped together (not spread to extremes).
-   Kiosk left edge aligns with compact image right edge (~460px into container).
-   info 320px + gap 140px = 460px → kiosk starts at same x as compact right edge */
+   Group info+kiosk together, centered in the row.
+   (1160px container − 300px info − 60px gap − 560px kiosk) / 2 = 120px → margin-left centers the group */
 .stations__plus-row{
   display:flex;
   align-items:flex-start;
   justify-content:flex-start;
-  gap:140px;
   margin-top:0;
 }
 .stations__plus-info{
-  flex:0 0 320px;
-  padding-top:140px;
+  flex:0 0 300px;
+  margin-left:120px;
+  padding-top:100px;
   padding-bottom:0;
 }
 .stations__plus-kiosk{
   flex:0 0 auto;
+  margin-left:60px;
   overflow:hidden;
   height:920px;
 }
