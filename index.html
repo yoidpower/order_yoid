@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css?v=53">
+  <link rel="stylesheet" href="css/style.css?v=55">
 </head>
 <body>
 
@@ -40,8 +40,13 @@
       <a href="#contact" class="hero__btn">REQUEST A STATION</a>
 
       <div class="hero__image-box">
-        <img src="images/station_top_page.png" alt="YOID Station" class="hero__image"/>
+        <div class="hero__station-wrapper">
+          <img src="images/station_top_page.png" alt="YOID Station" class="hero__station-img"/>
+        </div>
       </div>
+
+      <img src="images/arrow-left.svg" alt="" class="hero__arrow hero__arrow--left" aria-hidden="true">
+      <img src="images/arrow-right.svg" alt="" class="hero__arrow hero__arrow--right" aria-hidden="true">
 
     </div>
   </section>
@@ -77,7 +82,9 @@
         <!-- ROW 1: COMPACT -->
         <div class="stations__compact-row">
           <div class="stations__compact-img">
-            <img src="images/station_compact.png" alt="YOID Compact">
+            <div class="station-wrapper station-wrapper--compact">
+              <img class="station-img" src="images/station_compact.png" alt="YOID Compact">
+            </div>
           </div>
           <div class="stations__compact-info">
             <img src="images/compact_arrow.png" class="stations__row-arrow" alt="">
@@ -98,14 +105,18 @@
             <p>Higher capacity and extended usage — perfect for busy venues with steady customer flow.</p>
           </div>
           <div class="stations__plus-kiosk">
-            <img src="images/station-plus.png" alt="YOID Plus Station">
+            <div class="station-wrapper station-wrapper--plus">
+              <img class="station-img" src="images/station-plus.png" alt="YOID Plus Station">
+            </div>
           </div>
         </div>
 
         <!-- ROW 3: MAX -->
         <div class="stations__max-row">
           <div class="stations__max-kiosk">
-            <img src="images/station-max.png" alt="YOID Max Station">
+            <div class="station-wrapper station-wrapper--max">
+              <img class="station-img" src="images/station-max.png" alt="YOID Max Station">
+            </div>
           </div>
           <div class="stations__max-info">
             <img src="images/max_arrow.png" class="stations__row-arrow" alt="">

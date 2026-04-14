@@ -117,7 +117,7 @@ ul{list-style:none}
 .hero-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   background: url('../images/background.png') top center / cover no-repeat;
   height: 756px;           /* 1:1 at 1512px viewport */
 }
@@ -134,27 +134,30 @@ ul{list-style:none}
 }
 
 /* ── CARD ───────────────────────────────────────────────────── */
+/* Figma: top=76 left=71 w=1370 h=465 */
 .hero__card {
   position: absolute;
   top: 76px;
-  left: 58px;
-  width: 1394px;
-  height: 618px;
+  left: 71px;
+  width: 1370px;
+  height: 465px;
   background: var(--dark);
   border-radius: 30px;
   z-index: 1;
 }
 
 /* ── TITLE ──────────────────────────────────────────────────── */
+/* Figma: top=123 left=158 w=591 h=93 */
 .hero__title {
   position: absolute;
-  top: 140px;
-  left: 130px;
-  width: 720px;
-  font-size: 90px;
+  top: 123px;
+  left: 158px;
+  width: 591px;
+  height: 93px;
+  font-size: 44px;
   font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -.03em;
+  line-height: 1.05;
+  letter-spacing: -.02em;
   text-transform: uppercase;
   color: var(--white);
   z-index: 3;
@@ -163,44 +166,43 @@ ul{list-style:none}
   overflow: visible;
 }
 
-/* ── DESC BOX ───────────────────────────────────────────────── */
+/* ── DESC — white text on dark card ────────────────────────── */
+/* Figma: top=299 left=158 w=500 h=72 */
 .hero__desc {
   position: absolute;
-  top: 455px;
-  left: 130px;
-  width: 480px;
-  height: 172px;
-  background: linear-gradient(to right, #E8175D 0%, #F97316 100%);
-  border-radius: 20px;
-  padding: 22px 26px;
+  top: 299px;
+  left: 158px;
+  width: 500px;
+  height: 72px;
   z-index: 3;
-  overflow: hidden;
+  overflow: visible;
 }
 .hero__desc p {
   font-size: 16px;
-  line-height: 1.6;
-  color: rgba(255,255,255,.95);
+  line-height: 1.5;
+  color: rgba(255,255,255,.85);
   font-weight: 400;
   margin: 0;
 }
 
-/* ── BUTTON — sits BELOW the dark card on the hero background ── */
+/* ── BUTTON — inside dark card ─────────────────────────────── */
+/* Figma: top=419 left=158 w=173 h=41 */
 .hero__btn {
   position: absolute;
-  top: 712px;
-  left: 130px;
-  width: 200px;
-  height: 46px;
+  top: 419px;
+  left: 158px;
+  width: 173px;
+  height: 41px;
   background: var(--pink);
   color: #fff;
-  border-radius: 23px;
-  display: block;
-  text-align: center;
-  line-height: 46px;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font);
   font-weight: 800;
-  font-size: 11px;
-  letter-spacing: .1em;
+  font-size: 10px;
+  letter-spacing: .08em;
   text-transform: uppercase;
   text-decoration: none;
   z-index: 3;
@@ -208,22 +210,54 @@ ul{list-style:none}
 }
 .hero__btn:hover { background: #c4124e; box-shadow: 0 6px 20px rgba(232,23,93,.35); }
 
-/* ── IMAGE BOX — right side of card, tall, bleeds below card ── */
+/* ── IMAGE BOX — Figma: top=76 left=793 w=546 h=465 ────────── */
 .hero__image-box {
   position: absolute;
   top: 76px;
-  left: 858px;
-  width: 570px;
-  height: 680px;
+  left: 793px;
+  width: 546px;
+  height: 465px;
   z-index: 4;
   overflow: visible;
 }
-.hero__image {
+
+/* ── STATION inside image box ────────────────────────────── */
+/* aspect-ratio 1/2.35 — no cropping, overflow visible */
+.hero__station-wrapper {
+  position: absolute;
+  width: 417px;
+  height: 980px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -120px;
+  overflow: visible;
+}
+.hero__station-img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: contain;
-  object-position: top center;
+}
+
+/* ── ARROWS ─────────────────────────────────────────────────── */
+/* Arrow Left:  Figma top=260 left=693  w=95 h=52 */
+/* Arrow Right: Figma top=260 left=1350 w=95 h=52 */
+.hero__arrow {
+  position: absolute;
+  z-index: 5;
+  display: block;
+}
+.hero__arrow--left {
+  top: 260px;
+  left: 693px;
+  width: 95px;
+  height: 52px;
+}
+.hero__arrow--right {
+  top: 260px;
+  left: 1350px;
+  width: 95px;
+  height: 52px;
 }
 
 
@@ -312,16 +346,38 @@ ul{list-style:none}
 }
 .stations__compact-img{
   flex:0 0 460px;
+  position:relative;
+  height:730px;
 }
-.stations__compact-img img{width:100%;height:auto;display:block}
 .stations__compact-info{flex:1;padding-top:70px;padding-left:82px;position:relative;z-index:1}
 /* Compact badge: 50% bigger + extra gap before title */
 .stations__compact-info .stations__badge{
   font-size:16px;padding:9px 24px;border-radius:9px;margin-bottom:60px;
 }
 
-/* ROW 2: PLUS
-   JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
+/* Station wrapper system — exact Figma geometry, NO cropping */
+.station-wrapper{
+  position:absolute;
+  width:417px;
+  height:980px;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-120px;
+  overflow:visible;
+}
+.station-wrapper--plus{
+  transform:translateX(-50%) scale(0.85);
+}
+.station-wrapper--compact{
+  transform:translateX(-50%) scale(0.7);
+}
+.station-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* ROW 2: PLUS */
 .stations__plus-row{
   display:flex;
   align-items:center;
@@ -333,15 +389,12 @@ ul{list-style:none}
 }
 .stations__plus-kiosk{
   flex:1;
+  position:relative;
+  height:820px;
   overflow:visible;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
-.stations__plus-kiosk img{width:auto;height:auto;max-height:600px;max-width:100%;display:block;object-fit:contain}
 
-/* ROW 3: MAX
-   JPG 1600×1067 — landscape canvas, full kiosk visible, no cropping */
+/* ROW 3: MAX */
 .stations__max-row{
   display:flex;
   align-items:center;
@@ -349,12 +402,10 @@ ul{list-style:none}
 }
 .stations__max-kiosk{
   flex:1;
+  position:relative;
+  height:900px;
   overflow:visible;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
-.stations__max-kiosk img{width:auto;height:auto;max-height:600px;max-width:100%;display:block;object-fit:contain}
 .stations__max-info{
   flex:0 0 440px;
   padding-bottom:0;
