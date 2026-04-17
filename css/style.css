@@ -331,9 +331,22 @@ ul{list-style:none}
   width:210px;
   margin:0;
 }
-/* PLUS / MAX: arrow stacked above badge */
-.stations__plus-info   .stations__row-arrow{width:180px;margin-bottom:16px}
-.stations__max-info    .stations__row-arrow{width:140px;margin-bottom:16px}
+/* PLUS: absolute — sweeps from info col toward kiosk (arrowhead upper-right) */
+.stations__plus-info   .stations__row-arrow{
+  position:absolute;
+  top:-80px;
+  right:-80px;
+  width:290px;
+  margin:0;
+}
+/* MAX: absolute — in gap between kiosk and info, arrowhead pointing left */
+.stations__max-info    .stations__row-arrow{
+  position:absolute;
+  top:-70px;
+  left:-100px;
+  width:200px;
+  margin:0;
+}
 
 /* ROW 1: COMPACT
    Figma: image left ~460px (portrait station), gap 60px, text right fills rest
@@ -386,6 +399,7 @@ ul{list-style:none}
 .stations__plus-info{
   flex:0 0 440px;
   padding-bottom:0;
+  position:relative;
 }
 .stations__plus-kiosk{
   flex:1;
@@ -409,6 +423,7 @@ ul{list-style:none}
 .stations__max-info{
   flex:0 0 440px;
   padding-bottom:0;
+  position:relative;
 }
 
 /* ================================================================
@@ -644,8 +659,8 @@ ul{list-style:none}
   .stations__max-info{flex:0 0 280px;padding-bottom:0}
   .stations__max-row{margin-top:56px}
   .stations__compact-info .stations__row-arrow{width:120px}
-  .stations__plus-info   .stations__row-arrow{width:160px}
-  .stations__max-info    .stations__row-arrow{width:120px}
+  .stations__plus-info   .stations__row-arrow{width:200px;top:-60px;right:-50px}
+  .stations__max-info    .stations__row-arrow{width:150px;top:-50px;left:-70px}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
   .collection__header{padding:0 20px}
@@ -677,9 +692,9 @@ ul{list-style:none}
   .stations__max-row{flex-direction:column;align-items:flex-start;gap:24px;margin-top:40px}
   .stations__max-info{flex:none;width:auto;padding-bottom:0}
   .stations__max-kiosk{flex:none;width:100%;overflow:visible}
-  .stations__compact-info .stations__row-arrow{width:100px}
-  .stations__plus-info   .stations__row-arrow{width:130px}
-  .stations__max-info    .stations__row-arrow{width:100px}
+  .stations__compact-info .stations__row-arrow{display:none}
+  .stations__plus-info   .stations__row-arrow{display:none}
+  .stations__max-info    .stations__row-arrow{display:none}
   .collection__swiper .swiper-slide{width:160px!important}
   .collection__card{width:160px}
   .footer__cols{grid-template-columns:1fr;gap:28px}
