@@ -366,7 +366,7 @@ ul{list-style:none}
   overflow:visible;
 }
 .station-wrapper--plus{
-  transform:translateX(-50%) scale(2.25);
+  transform:translateX(-50%) scale(1.3);
 }
 .station-wrapper--compact{
   transform:translateX(-50%) scale(0.7);
