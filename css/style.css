@@ -323,20 +323,21 @@ ul{list-style:none}
 
 /* Row arrows */
 .stations__row-arrow{display:block;height:auto}
-/* COMPACT: arrow absolutely positioned — values set via browser inspector */
+/* COMPACT: arrow absolutely positioned — Figma Group 65: W=245,H=358 @ -40° = 184×269 site px */
 .stations__compact-info .stations__row-arrow{
   position:absolute;
   top:28px;
-  left:-90px;
+  left:-80px;
   width:210px;
   margin:0;
 }
-/* PLUS: absolute — sweeps from info col toward kiosk (arrowhead upper-right) */
+/* PLUS: Figma Group 66: W=274,H=917.77 @ -90° rotation → visual 688×206 site px */
 .stations__plus-info   .stations__row-arrow{
   position:absolute;
-  top:-80px;
-  right:-80px;
-  width:290px;
+  top:-170px;
+  left:-15px;
+  width:688px;
+  max-width:none;
   margin:0;
 }
 /* MAX: absolute — in gap between kiosk and info, arrowhead pointing left */
@@ -659,7 +660,7 @@ ul{list-style:none}
   .stations__max-info{flex:0 0 280px;padding-bottom:0}
   .stations__max-row{margin-top:56px}
   .stations__compact-info .stations__row-arrow{width:120px}
-  .stations__plus-info   .stations__row-arrow{width:200px;top:-60px;right:-50px}
+  .stations__plus-info   .stations__row-arrow{width:380px;top:-100px;left:-10px}
   .stations__max-info    .stations__row-arrow{width:150px;top:-50px;left:-70px}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
