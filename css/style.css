@@ -340,12 +340,13 @@ ul{list-style:none}
   max-width:none;
   margin:0;
 }
-/* MAX: absolute — in gap between kiosk and info, arrowhead pointing left */
+/* MAX: tail upper-right near badge, arrowhead sweeps left toward kiosk */
 .stations__max-info    .stations__row-arrow{
   position:absolute;
-  top:-70px;
-  left:-100px;
-  width:200px;
+  top:-130px;
+  left:-270px;
+  width:300px;
+  max-width:none;
   margin:0;
 }
 
@@ -661,7 +662,7 @@ ul{list-style:none}
   .stations__max-row{margin-top:56px}
   .stations__compact-info .stations__row-arrow{width:120px}
   .stations__plus-info   .stations__row-arrow{width:380px;top:-100px;left:-10px}
-  .stations__max-info    .stations__row-arrow{width:150px;top:-50px;left:-70px}
+  .stations__max-info    .stations__row-arrow{width:180px;top:-90px;left:-160px}
 
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
   .collection__header{padding:0 20px}
