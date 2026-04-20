@@ -7,14 +7,14 @@
 (function () {
   'use strict';
 
-  // ── Hero: scale 1512×756 canvas to viewport via transform ───
+  // ── Hero: scale 1512×960 canvas to viewport via transform ───
   function scaleHero() {
     const canvas  = document.querySelector('.hero-scale');
     const wrapper = document.querySelector('.hero-wrapper');
     if (!canvas || !wrapper) return;
     const scale = window.innerWidth / 1512;
     canvas.style.transform  = 'scale(' + scale + ')';
-    wrapper.style.height    = Math.round(756 * scale) + 'px';
+    wrapper.style.height    = Math.round(960 * scale) + 'px';
   }
   scaleHero();
   window.addEventListener('resize', scaleHero, { passive: true });
