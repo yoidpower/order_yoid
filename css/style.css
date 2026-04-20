@@ -213,7 +213,7 @@ ul{list-style:none}
 /* ── IMAGE BOX — Figma: top=76 left=793 w=546 h=465 ────────── */
 .hero__image-box {
   position: absolute;
-  top: 76px;
+  top: 146px;
   left: 793px;
   width: 546px;
   height: 465px;
