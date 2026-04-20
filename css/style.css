@@ -501,8 +501,8 @@ ul{list-style:none}
   display:flex;align-items:flex-start;justify-content:space-between;gap:40px;
 }
 .collection__title{
-  font-size:clamp(28px,3.6vw,42px);
-  font-weight:800;text-transform:uppercase;
+  font-size:48px;
+  font-weight:900;text-transform:uppercase;
   letter-spacing:-.02em;color:#222;
   white-space:nowrap;flex-shrink:0;
 }
@@ -549,9 +549,9 @@ ul{list-style:none}
 }
 
 .contact__title{
-  font-size:clamp(26px,3.2vw,38px);font-weight:800;
-  line-height:1.15;text-transform:uppercase;
-  letter-spacing:-.01em;margin-bottom:20px;color:#111;
+  font-size:75px;font-weight:900;
+  line-height:1.05;text-transform:uppercase;
+  letter-spacing:-.02em;margin-bottom:20px;color:#111;
 }
 .contact__desc{font-size:14px;color:#555;line-height:1.75;margin-bottom:28px}
 .contact__list{display:flex;flex-direction:column;gap:14px}
@@ -751,6 +751,8 @@ ul{list-style:none}
   .stations__max-info{flex:0 0 200px;margin-left:160px;padding-top:30px}
   .stations__max-info .stations__row-arrow{width:200px;top:-80px;left:-200px}
 
+  .contact__title{font-size:48px;line-height:1.1}
+  .collection__title{font-size:36px}
   .contact__inner{grid-template-columns:1fr;gap:48px;padding:0 20px}
   .collection__header{padding:0 20px}
   .collection__header-row{flex-direction:column;gap:12px}
@@ -767,6 +769,8 @@ ul{list-style:none}
   :root{--nav-h:60px}
   .nav{width:calc(100% - 24px);top:8px}
   .sect-title{font-size:36px;letter-spacing:-.02em}
+  .contact__title{font-size:32px;line-height:1.15}
+  .collection__title{font-size:28px}
   /* hero scales via JS transform — no overrides needed */
   .stations{padding:60px 0 0}
   .collection{padding:72px 0}
