@@ -774,7 +774,40 @@ ul{list-style:none}
   .sect-title{font-size:36px;letter-spacing:-.02em}
   .contact__title{font-size:32px;line-height:1.15}
   .collection__title{font-size:28px}
-  /* hero scales via JS transform — no overrides needed */
+
+  /* ── Hero mobile: disable JS scale, reposition into 375px ── */
+  .hero-wrapper{height:500px!important;overflow:hidden}
+  .hero-scale{transform:none!important;width:100%!important}
+  .hero__card{
+    top:56px!important;left:16px!important;
+    width:calc(100% - 32px)!important;height:390px!important;
+    border-radius:20px!important;
+  }
+  .hero__title{
+    top:80px!important;left:24px!important;
+    width:52%!important;font-size:24px!important;line-height:1.1!important;
+  }
+  .hero__desc{
+    top:316px!important;left:20px!important;
+    width:calc(52% - 8px)!important;height:auto!important;
+    padding:12px 14px!important;border-radius:10px!important;
+  }
+  .hero__desc p{font-size:11px!important;line-height:1.4!important;letter-spacing:0.02em!important}
+  .hero__image-box{
+    top:10px!important;left:50%!important;
+    width:54%!important;height:440px!important;
+  }
+  .hero__btn{
+    top:462px!important;left:20px!important;
+    width:auto!important;height:36px!important;
+    font-size:9px!important;padding:0 18px!important;
+  }
+
+  /* ── Feature cards: 2-col grid on mobile ── */
+  .hero-features__inner{flex-wrap:wrap;gap:12px;padding:0 16px}
+  .hf__card{flex:0 0 calc(50% - 6px);max-width:none}
+  .hf__card:last-child{flex:0 0 100%}
+
   .stations{padding:60px 0 0}
   .collection{padding:72px 0}
   .contact{padding:72px 0 40px}
