@@ -340,9 +340,10 @@ ul{list-style:none}
   width:200px;
   margin:0;
 }
-/* PLUS arrow: between info right edge and kiosk
+/* PLUS arrow: right of info, pointing toward kiosk
    Figma arrow at L=286,T=3163 — info at L=455,T=3437
-   Points right toward kiosk */
+   offset relative to info top: (3163−3437)×0.75 = −206px → top:−206px but info has pt=621
+   so arrow appears at row-top + (621−206) = 415px from row top */
 .stations__plus-info .stations__row-arrow{
   position:absolute;
   top:490px;
@@ -408,6 +409,7 @@ ul{list-style:none}
    ROW 2: PLUS  (info LEFT, kiosk RIGHT)
    padding-left:341  info:291 pt:621  gap:151  kiosk:473 H:2069
    Row min-height = (T_MAX−T_PLUS)×0.75 = 3094×0.75 = 2321
+   station-plus.png = 1262×5518 → at 473px wide = 473×(5518/1262) ≈ 2068px natural
    ══════════════════════════════════════════════════════════ */
 .stations__plus-row{
   display:flex;
@@ -440,16 +442,14 @@ ul{list-style:none}
 }
 .stations__plus-kiosk .station-img{
   width:473px;
-  height:2069px;
-  object-fit:contain;
-  object-position:top;
-  border-radius:12px;
+  height:auto;
   display:block;
 }
 
 /* ══════════════════════════════════════════════════════════
    ROW 3: MAX  (kiosk LEFT, info RIGHT)
    padding-left:125  kiosk:512 H:1482  gap:316  info:291 pt:45
+   station-max.png = 1364×3952 → at 512px wide = 512×(3952/1364) ≈ 1483px natural
    ══════════════════════════════════════════════════════════ */
 .stations__max-row{
   display:flex;
@@ -476,10 +476,7 @@ ul{list-style:none}
 }
 .stations__max-kiosk .station-img{
   width:512px;
-  height:1482px;
-  object-fit:contain;
-  object-position:top;
-  border-radius:12px;
+  height:auto;
   display:block;
 }
 .stations__max-info{
@@ -719,11 +716,11 @@ ul{list-style:none}
   .stations__plus-row{padding-left:220px;min-height:1600px}
   .stations__plus-info{flex:0 0 220px;padding-top:430px}
   .stations__plus-kiosk{flex:0 0 340px;margin-left:110px}
-  .stations__plus-kiosk .station-img{width:340px;height:1490px}
+  .stations__plus-kiosk .station-img{width:340px;height:auto}
 
   .stations__max-row{padding-left:80px}
   .stations__max-kiosk{flex:0 0 360px}
-  .stations__max-kiosk .station-img{width:360px;height:1040px}
+  .stations__max-kiosk .station-img{width:360px;height:auto}
   .stations__max-info{flex:0 0 220px;margin-left:220px}
 }
 
@@ -747,12 +744,12 @@ ul{list-style:none}
   .stations__plus-row{padding-left:120px;min-height:1300px}
   .stations__plus-info{flex:0 0 200px;padding-top:320px}
   .stations__plus-kiosk{flex:0 0 280px;margin-left:80px}
-  .stations__plus-kiosk .station-img{width:280px;height:1228px}
+  .stations__plus-kiosk .station-img{width:280px;height:auto}
   .stations__plus-info .stations__row-arrow{width:280px;top:250px;right:-140px}
 
   .stations__max-row{padding-left:40px;min-height:900px}
   .stations__max-kiosk{flex:0 0 280px}
-  .stations__max-kiosk .station-img{width:280px;height:810px}
+  .stations__max-kiosk .station-img{width:280px;height:auto}
   .stations__max-info{flex:0 0 200px;margin-left:160px;padding-top:30px}
   .stations__max-info .stations__row-arrow{width:200px;top:-80px;left:-200px}
 
