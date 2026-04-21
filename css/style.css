@@ -824,8 +824,8 @@ ul{list-style:none}
   .stations__plus-row{
     flex-direction:column;padding-left:24px;padding-right:24px;min-height:auto;
   }
-  .stations__plus-info{flex:none;width:auto;padding-top:24px}
-  .stations__plus-kiosk{flex:none;width:calc(100% - 48px);max-width:320px;margin-left:0}
+  .stations__plus-info{flex:none;width:auto;padding-top:24px;order:2}
+  .stations__plus-kiosk{flex:none;width:calc(100% - 48px);max-width:320px;margin-left:0;order:1}
   .stations__plus-kiosk .station-img{width:100%;height:auto}
   .stations__plus-info .stations__row-arrow{display:none}
 
