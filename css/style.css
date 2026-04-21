@@ -330,14 +330,14 @@ ul{list-style:none}
 /* ── Row arrows (absolutely positioned inside info divs) ── */
 .stations__row-arrow{display:block;height:auto;pointer-events:none}
 
-/* COMPACT arrow: top-left of info div, extending left toward image
-   Figma arrow at L=757,T=1943 — info at L=1129,T=2197
-   offset: left=-279px, top=-191px; W=184px */
+/* COMPACT arrow: points toward station screen
+   Screen center ≈ 169px below info top (image top 25%)
+   Arrow placed to bridge gap between image right edge and info left */
 .stations__compact-info .stations__row-arrow{
   position:absolute;
-  top:-150px;
-  left:-250px;
-  width:200px;
+  top:130px;
+  left:-260px;
+  width:220px;
   margin:0;
 }
 /* PLUS arrow: right of info, pointing toward kiosk
