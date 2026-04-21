@@ -352,14 +352,13 @@ ul{list-style:none}
   max-width:none;
   margin:0;
 }
-/* MAX arrow: tip (bottom-left) points just outside screen top-right corner
-   target tip X ≈ 530 (screen right bezel) → left = 530 - info_left(953) = -423px
-   target tip Y ≈ 4640 → top = 4640 - info_top(4463) - renderedH(408) = -231px */
+/* MAX arrow — position tuned manually in devtools */
 .stations__max-info .stations__row-arrow{
   position:absolute;
-  top:-200px;
-  left:-420px;
+  top:24px;
+  left:-335px;
   width:420px;
+  max-width:none;
   max-width:none;
   margin:0;
 }
