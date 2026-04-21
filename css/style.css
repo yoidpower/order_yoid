@@ -352,14 +352,13 @@ ul{list-style:none}
   max-width:none;
   margin:0;
 }
-/* MAX arrow: arrowhead (bottom-left) points at kiosk screen
-   arrowhead Y = info_top + top + renderedH(408) = screen_center(4891)
-   → top = 4891 - 4564 - 408 = -81px
-   arrowhead X ≈ left edge = info_left(953) - 550 = 403 ≈ screen_center_X(381) */
+/* MAX arrow: tip (bottom-left) points just outside screen top-right corner
+   target tip X ≈ 530 (screen right bezel) → left = 530 - info_left(953) = -423px
+   target tip Y ≈ 4640 → top = 4640 - info_top(4463) - renderedH(408) = -231px */
 .stations__max-info .stations__row-arrow{
   position:absolute;
-  top:-81px;
-  left:-550px;
+  top:-200px;
+  left:-420px;
   width:420px;
   max-width:none;
   margin:0;
