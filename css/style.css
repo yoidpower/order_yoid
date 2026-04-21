@@ -803,10 +803,9 @@ ul{list-style:none}
     font-size:9px!important;padding:0 18px!important;
   }
 
-  /* ── Feature cards: 2-col grid on mobile ── */
-  .hero-features__inner{flex-wrap:wrap;gap:12px;padding:0 16px}
-  .hf__card{flex:0 0 calc(50% - 6px);max-width:none}
-  .hf__card:last-child{flex:0 0 100%}
+  /* ── Feature cards: single column on mobile ── */
+  .hero-features__inner{grid-template-columns:1fr;padding:16px;gap:12px}
+  .hf__card{padding:20px}
 
   .stations{padding:60px 0 0}
   .collection{padding:72px 0}
