@@ -352,12 +352,15 @@ ul{list-style:none}
   max-width:none;
   margin:0;
 }
-/* MAX arrow: above info, sweeping from info toward kiosk on left */
+/* MAX arrow: arrowhead (bottom-left) points at kiosk screen
+   arrowhead Y = info_top + top + renderedH(408) = screen_center(4891)
+   → top = 4891 - 4564 - 408 = -81px
+   arrowhead X ≈ left edge = info_left(953) - 550 = 403 ≈ screen_center_X(381) */
 .stations__max-info .stations__row-arrow{
   position:absolute;
-  top:-110px;
-  left:-290px;
-  width:310px;
+  top:-81px;
+  left:-550px;
+  width:420px;
   max-width:none;
   margin:0;
 }
@@ -481,7 +484,7 @@ ul{list-style:none}
 }
 .stations__max-info{
   flex:0 0 291px;
-  padding-top:45px;
+  padding-top:300px;
   margin-left:316px;
   position:relative;
   flex-shrink:0;
